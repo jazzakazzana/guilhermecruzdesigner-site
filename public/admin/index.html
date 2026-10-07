@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Painel — Guilherme Cruz</title>
+<meta name="description" content="Área restrita.">
+<meta name="theme-color" content="#0C2301">
+<link rel="canonical" href="https://guilhermecruzdesigner.com.br/admin/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Painel — Guilherme Cruz">
+<meta property="og:description" content="Área restrita.">
+<meta property="og:url" content="https://guilhermecruzdesigner.com.br/admin/">
+<meta property="og:image" content="https://guilhermecruzdesigner.com.br/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800;900&family=Syne:wght@500;600;700;800&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Guilherme <span>Cruz</span> · painel</a>
+    <span class="pixel" id="who"></span>
+    <a class="btn" href="/portfolio/">Ver portfólio</a>
+  </div>
+</header>
+
+<main class="admin">
+  <div class="wrap">
+    <p id="msg" class="msg" role="status" aria-live="polite" hidden></p>
+
+    <section class="card">
+      <h2 id="form-title">Novo trabalho</h2>
+      <form id="form" novalidate>
+        <div class="grid2">
+          <label>Título do projeto *<input name="title" maxlength="120" required></label>
+          <label>Cliente<input name="client" maxlength="120"></label>
+          <label>Categoria *
+            <select name="category" required>
+              <option value="papelaria">Papelaria e impressos</option>
+              <option value="identidade">Identidade visual</option>
+              <option value="campanhas">Conteúdo e campanhas</option>
+            </select>
+          </label>
+          <label>Ano<input name="year" type="number" min="1990" max="2100" placeholder="2025"></label>
+        </div>
+        <label>Descrição (o que você fez, formato, acabamento…)<textarea name="description" rows="5" maxlength="4000"></textarea></label>
+        <label>Tags (separe por vírgula, até 8)<input name="tags" placeholder="Arte-final, Fechamento, Papel couchê"></label>
+
+        <fieldset>
+          <legend>Imagens (a primeira é a capa)</legend>
+          <input type="file" id="files" accept="image/jpeg,image/png,image/webp" multiple>
+          <p class="hint">JPG, PNG ou WebP. O painel reduz pra no máximo 1600 px e converte pra WebP antes de enviar.</p>
+          <ul id="thumbs" class="thumbs"></ul>
+        </fieldset>
+
+        <div class="checks">
+          <label class="chk"><input type="checkbox" name="published" checked> Publicado (aparece no site)</label>
+          <label class="chk"><input type="checkbox" name="featured"> Destaque na página inicial</label>
+        </div>
+        <div class="row">
+          <button class="btn" type="submit" id="save">Salvar trabalho</button>
+          <button class="btn alt" type="button" id="cancel" hidden>Cancelar edição</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Trabalhos cadastrados</h2>
+      <ul id="list" class="list"></ul>
+    </section>
+  </div>
+</main>
+
+<script src="/js/admin.js" defer></script>
+</body>
+</html>

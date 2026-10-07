@@ -1,61 +1,30 @@
-# Site do Guilherme Cruz
+# Site do Guilherme Cruz (Cloudflare Pages)
 
-Site estático (sem backend por enquanto) para publicar no Cloudflare.
-Domínio: **guilhermecruzdesigner.com.br** · Instagram: **@guicruzdesign**
+Site estático + Pages Functions (backend), hospedado no Cloudflare Pages com deploy automático pelo GitHub.
 
-## O que tem em cada lugar
+## Páginas
+- `/` início (introdução + convites pra ler mais)
+- `/sobre-mim/` história completa
+- `/portfolio/` lista com filtros, `/portfolio/<nome-do-projeto>` página de cada trabalho
+- `/admin/` painel pra cadastrar trabalhos (protegido por login do Cloudflare Access)
 
-| Arquivo / pasta | Pra que serve |
-|---|---|
-| `public/index.html` | A página inteira (textos, estrutura) |
-| `public/css/style.css` | Cores, fontes, layout |
-| `public/js/main.js` | Só desenha os ícones de pixel das "conquistas" |
-| `public/img/` | Fotos e peças (já otimizadas em WebP) e a imagem de compartilhamento `og.jpg` |
-| `public/404.html` | Página de erro |
-| `public/robots.txt`, `sitemap.xml` | Ajudam o Google a entender o site |
-| `public/_headers` | Cabeçalhos básicos de segurança |
-| `wrangler.jsonc` | Diz ao Cloudflare qual pasta publicar (`public`) |
+## Como o painel funciona
+Trabalhos ficam num banco **D1**, imagens num bucket **R2**. O painel reduz e converte as imagens pra WebP no navegador antes de enviar.
+Enquanto o backend não estiver configurado, o portfólio mostra os 4 trabalhos de `public/data/works.json` e o `/admin` fica fechado (nunca aberto).
 
-Tudo que o visitante vê está dentro de `public/`. Pra trocar um texto, mexa no `index.html`. Pra trocar uma foto, substitua o arquivo em `public/img/` mantendo o mesmo nome.
+## Configurar o backend (uma vez só)
+1. **Banco D1**: Cloudflare → Armazenamento e bancos de dados → D1 → Criar banco `gc-portfolio` → aba **Console** → cole o conteúdo de `db/schema.sql` → Executar. Copie o **ID do banco**.
+2. **Bucket R2**: R2 → Criar bucket `gc-media` (o R2 pode pedir um cartão cadastrado; o plano gratuito cobre bastante).
+3. **Access**: Zero Trust → Access → Aplicativos → Adicionar → Self-hosted. Domínio `guilhermecruzdesigner.com.br`, dois caminhos: `admin*` e `api/admin*`. Política **Allow** só pro seu e-mail. Depois de salvar, copie o **Application Audience (AUD) Tag**. O "team domain" aparece em Zero Trust → Configurações (algo como `seutime.cloudflareaccess.com`).
+4. No GitHub, abra `wrangler.backend.exemplo.jsonc`, copie o conteúdo, cole em `wrangler.jsonc` e preencha o ID do banco, o team domain e o AUD. Commit. O deploy roda sozinho.
+5. Acesse `guilhermecruzdesigner.com.br/admin/`, faça login e cadastre os trabalhos.
 
-## Publicar pela primeira vez
+Obs.: o Access só protege no domínio próprio (não no `.pages.dev`); lá a API do admin responde 401 mesmo assim.
 
-### 1. Domínio no Cloudflare
-1. No Cloudflare, clique em **Add a domain** e informe `guilhermecruzdesigner.com.br`.
-2. Escolha o plano gratuito. O Cloudflare mostra **dois servidores de DNS** (algo como `xxxx.ns.cloudflare.com`).
-3. No Registro.br, abra o domínio, vá em **Alterar servidores DNS** e troque pelos dois do Cloudflare.
-4. Espere o Cloudflare marcar o domínio como **Active** (pode levar de minutos a algumas horas).
-5. Se o Registro.br tiver DNSSEC ativo, desative antes de trocar e reative depois seguindo as instruções do Cloudflare.
+## Segurança
+- A API do admin confere o token do Access (assinatura RS256, validade, emissor, AUD e e-mail) e fecha se faltar configuração.
+- Escritas exigem o cabeçalho `X-Requested-With: admin-ui` (anti-CSRF).
+- Upload valida o tipo real do arquivo (JPG/PNG/WebP, até 8 MB); só caminhos de imagem do próprio site são aceitos.
 
-### 2. Código no GitHub
-1. No GitHub, crie um repositório novo (sugestão: `guilhermecruzdesigner-site`).
-2. Em **Add file → Upload files**, arraste **o conteúdo desta pasta** (`public`, `wrangler.jsonc`, `README.md`, `.gitignore`) e confirme com **Commit changes**.
-
-### 3. Publicar no Cloudflare
-1. No Cloudflare: **Workers & Pages → Create application** e escolha importar um repositório do GitHub.
-2. Autorize o GitHub, selecione o repositório e a branch `main`.
-3. Nome do projeto: `guilhermecruzdesigner` (o mesmo do `wrangler.jsonc`).
-4. Deixe o comando de build em branco e o comando de deploy como `npx wrangler deploy`.
-5. Clique em **Deploy**. Quando terminar, você ganha um endereço `*.workers.dev` pra testar.
-
-(Os nomes dos botões podem variar um pouco, porque o painel do Cloudflare muda de vez em quando.)
-
-### 4. Ligar o domínio ao site
-1. Abra o projeto → **Settings → Domains & Routes → Add → Custom domain**.
-2. Adicione `guilhermecruzdesigner.com.br` e também `www.guilhermecruzdesigner.com.br`.
-3. O domínio só aparece como opção se já estiver ativo no Cloudflare (passo 1).
-
-## Atualizações depois
-
-Sempre que você (ou eu, na conversa) mudar um arquivo, é só substituí-lo no GitHub e fazer o commit. O Cloudflare publica a nova versão sozinho em poucos minutos.
-
-## Antes de divulgar o link
-
-- [ ] Trocar o aviso de "fotografando as peças" pelas fotos reais de papelaria, certificados e tags
-- [ ] Conferir o site no celular e no computador
-- [ ] Testar o link do WhatsApp, o e-mail e o Instagram
-- [ ] Conferir a prévia do link: cole o endereço numa conversa do WhatsApp e veja se aparece a imagem
-
-## Testar no seu computador (opcional)
-
-Precisa do Node instalado. Na pasta do projeto: `npx wrangler dev`
+## Estrutura
+`public/` site · `functions/` backend · `db/schema.sql` banco · `wrangler.jsonc` config do Pages (sem build command; diretório de saída `public`).

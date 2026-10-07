@@ -1,0 +1,18 @@
+{
+  // Depois de criar o banco D1, o bucket R2 e o app do Access (veja o README),
+  // troque o conteúdo do arquivo wrangler.jsonc por este, preenchendo os 3 valores marcados.
+  "name": "guilhermecruzdesigner-site",
+  "compatibility_date": "2026-10-01",
+  "pages_build_output_dir": "./public",
+  "d1_databases": [
+    { "binding": "DB", "database_name": "gc-portfolio", "database_id": "COLE-AQUI-O-ID-DO-BANCO" }
+  ],
+  "r2_buckets": [
+    { "binding": "MEDIA", "bucket_name": "gc-media" }
+  ],
+  "vars": {
+    "ACCESS_TEAM_DOMAIN": "COLE-AQUI.cloudflareaccess.com",
+    "ACCESS_AUD": "COLE-AQUI-O-AUD-TAG",
+    "ADMIN_EMAIL": "guicruz2011.gc@gmail.com"
+  }
+}
