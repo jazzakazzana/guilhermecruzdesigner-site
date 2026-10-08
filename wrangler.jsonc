@@ -1,5 +1,16 @@
 {
   "name": "guilhermecruzdesigner-site",
   "compatibility_date": "2026-10-01",
-  "pages_build_output_dir": "./public"
+  "pages_build_output_dir": "./public",
+  "d1_databases": [
+    { "binding": "DB", "database_name": "gc-portfolio", "database_id": "0522d634-fb55-485b-9048-1811606248f0" }
+  ],
+  "r2_buckets": [
+    { "binding": "MEDIA", "bucket_name": "gc-media" }
+  ],
+  "vars": {
+    "ACCESS_TEAM_DOMAIN": "guicruz.cloudflareaccess.com",
+    "ACCESS_AUD": "528e2f0951921765bd77506895ebf609b495c2d68ea3a49d2d6e9fec843ee708",
+    "ADMIN_EMAIL": "guicruz2011.gc@gmail.com"
+  }
 }
