@@ -10,7 +10,6 @@
   ],
   "vars": {
     "ACCESS_TEAM_DOMAIN": "guicruz.cloudflareaccess.com",
-    "ACCESS_AUD": "528e2f0951921765bd77506895ebf609b495c2d68ea3a49d2d6e9fec843ee708",
-    "ADMIN_EMAIL": "guicruz2011.gc@gmail.com"
+    "ACCESS_AUD": "528e2f0951921765bd77506895ebf609b495c2d68ea3a49d2d6e9fec843ee708"
   }
 }
