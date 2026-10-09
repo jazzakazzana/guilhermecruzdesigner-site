@@ -10,7 +10,7 @@
     --pixel-yellow:#FFE94D;
     --f-display:'Unbounded','Arial Black',Impact,sans-serif;
     --f-body:'Syne','Trebuchet MS',Arial,sans-serif;
-    --f-pixel:'Pixelify Sans','Courier New',monospace;
+    --f-pixel:'Syne','Trebuchet MS',Arial,sans-serif;
     box-sizing:border-box;
     padding-top:env(safe-area-inset-top,0px);
     padding-bottom:env(safe-area-inset-bottom,0px);
@@ -259,3 +259,7 @@
   .list img{width:70px; height:70px;}
   .list .act{grid-column:1/-1; justify-content:flex-start;}
 }
+
+/* textos que eram pixelados agora usam Syne ExtraBold */
+.pixel,figcaption,.quote,.stamp,.achv .sub,.toast,.toast .t,.toast .d,.panel li,.seal,.steps .num,.meta,.chips li,.hooks a,.wcard .c,.list .b,.thumbs .tag,footer{font-weight:700;}
+.stamp,.seal,.achv .sub,.hooks a{font-weight:800;}
