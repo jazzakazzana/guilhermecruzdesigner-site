@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "defaultMode": "default",
+    "disableBypassPermissionsMode": "disable",
+    "deny": [
+      "Edit(/wrangler.jsonc)",
+      "Edit(/wrangler.backend.exemplo.jsonc)",
+      "Edit(/functions/**)",
+      "Edit(/db/**)",
+      "Edit(/public/_headers)",
+      "Edit(/public/admin/**)",
+      "Edit(/public/js/admin.js)",
+      "Edit(/.claude/**)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git reset --hard*)",
+      "Bash(git clean*)",
+      "Bash(rm -rf*)",
+      "Bash(wrangler*)",
+      "Bash(npx wrangler*)"
+    ],
+    "ask": [
+      "Edit(/CLAUDE.md)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push)",
+      "Bash(git push *)",
+      "Bash(git merge *)",
+      "Bash(git checkout *)",
+      "Bash(git switch *)",
+      "Bash(git rebase *)",
+      "Bash(git stash *)",
+      "Bash(rm *)",
+      "Bash(mv *)",
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(pip *)"
+    ]
+  }
+}
