@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Briefing — Guilherme Cruz</title>
+<meta name="description" content="Conte o que você precisa: identidade visual, material impresso ou landing page. Com as respostas, Guilherme Cruz monta o orçamento.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0C2301">
+<link rel="canonical" href="https://guilhermecruzdesigner.com.br/briefing/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800;900&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/anim.css?v=1">
+<link rel="stylesheet" href="/css/briefing.css?v=2">
+<script>document.documentElement.className+=' js';window.addEventListener('load',function(){if(!window.__anim)document.documentElement.className+=' no-anim'});</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Guilherme <span>Cruz</span></a>
+    <nav aria-label="Navegação principal">
+      <a href="/sobre-mim/">Sobre mim</a>
+      <a href="/portfolio/">Portfólio</a>
+      <a href="/#servicos">Serviços</a>
+      <a href="/#contato">Contato</a>
+    </nav>
+    <a class="btn" href="https://wa.me/5551993627861">WhatsApp</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="intro-hero panels">
+    <div class="wrap">
+      <h1>Briefing</h1>
+      <p>Me conta o que você precisa. Com as respostas eu monto o orçamento e já começo o projeto sabendo o essencial.</p>
+      <p class="jump pixel">escolha o tipo de projeto e responda o que souber</p>
+    </div>
+  </section>
+
+  <section class="page-light">
+    <div class="wrap">
+
+      <noscript>
+        <p class="bf-msg">Este formulário precisa de JavaScript. Se não conseguir usar, me chame no <a href="https://wa.me/5551993627861">WhatsApp</a>.</p>
+      </noscript>
+
+      <form id="bf" class="bf" autocomplete="on">
+
+        <fieldset class="bf-fs" id="bf-choice">
+          <legend>1. O que você precisa?</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio" name="servico" value="Identidade visual" required>
+              <span class="c-title">Identidade visual</span>
+              <span class="c-desc">Logo, paleta, tipografia e manual de uso: a marca inteira, pensada para funcionar em todas as aplicações.</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="servico" value="Material impresso">
+              <span class="c-title">Material impresso</span>
+              <span class="c-desc">Cartão, folder, cardápio, catálogo, embalagem, banner e outras peças prontas para a gráfica.</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="servico" value="Landing page">
+              <span class="c-title">Landing page</span>
+              <span class="c-desc">Uma página única para vender, captar contatos ou divulgar algo, do layout até o ar.</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div id="bf-rest" hidden>
+
+          <fieldset class="bf-fs" data-reveal>
+            <legend>2. Sobre você</legend>
+            <div class="bf-grid">
+              <div class="f">
+                <label for="f-nome">Nome <b aria-hidden="true">*</b></label>
+                <input type="text" id="f-nome" name="Nome" required autocomplete="name">
+              </div>
+              <div class="f">
+                <label for="f-whats">WhatsApp <b aria-hidden="true">*</b></label>
+                <input type="tel" id="f-whats" name="WhatsApp" required inputmode="tel" autocomplete="tel" placeholder="(51) 90000-0000">
+              </div>
+              <div class="f">
+                <label for="f-email">E-mail <b aria-hidden="true">*</b></label>
+                <input type="email" id="f-email" name="email" required autocomplete="email">
+              </div>
+              <div class="f" id="f-empresa-wrap">
+                <label for="f-empresa">Empresa ou marca</label>
+                <input type="text" id="f-empresa" name="Empresa ou marca" autocomplete="organization">
+              </div>
+              <div class="f wide">
+                <label for="f-cidade">Cidade e estado</label>
+                <input type="text" id="f-cidade" name="Cidade e estado" autocomplete="address-level2" placeholder="São Leopoldo, RS">
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ===== Identidade visual ===== -->
+          <fieldset class="bf-fs" id="bf-idv" hidden disabled>
+            <legend>3. Sobre a marca</legend>
+            <p class="bf-intro">Conte sobre a sua marca com o máximo de detalhe que puder. O que você não souber responder, pode deixar em branco. Depois que você enviar, eu chamo você no WhatsApp para completar as informações e conhecer as suas inspirações.</p>
+<div class="bf-block" data-reveal>
+  <h3>A marca</h3>
+  <div class="bf-grid">
+<div class="f wide">
+  <label for="i-nome">Qual é o nome da marca? <b aria-hidden="true">*</b></label>
+  <input type="text" id="i-nome" name="Nome da marca" required>
+</div>
+<div class="f wide">
+  <label for="i-desc">Qual descritivo acompanha o nome?</label>
+  <small>Exemplo: confeitaria artesanal, estúdio de pilates, clínica odontológica.</small>
+  <input type="text" id="i-desc" name="Descritivo do nome">
+</div>
+<div class="f wide">
+  <label for="i-signif">O nome da marca tem algum significado?</label>
+  <textarea id="i-signif" name="Significado do nome"></textarea>
+</div>
+<div class="f wide">
+  <label for="i-servicos">Quais serviços ou produtos a sua marca oferece? <b aria-hidden="true">*</b></label>
+  <textarea id="i-servicos" name="Serviços e produtos" required></textarea>
+</div>
+<div class="f wide">
+  <label for="i-historia">Qual é a história da sua marca?</label>
+  <textarea id="i-historia" name="História da marca"></textarea>
+</div>
+<div class="f">
+  <label for="i-tempo">Há quanto tempo a sua marca existe?</label>
+  <input type="text" id="i-tempo" name="Tempo de existência">
+</div>
+<div class="f wide">
+  <span class="lab" id="i-fisico-l">A sua empresa tem um espaço físico?</span>
+<div class="opts" role="radiogroup" aria-labelledby="i-fisico-l">
+  <label class="opt"><input type="radio" name="Espaço físico" value="Sim"><span>Sim</span></label>
+  <label class="opt"><input type="radio" name="Espaço físico" value="Não"><span>Não</span></label>
+  <label class="opt"><input type="radio" name="Espaço físico" value="Não, mas pretendo"><span>Não, mas pretendo</span></label>
+</div>
+</div>
+<div class="f wide">
+  <label for="i-desafio">Qual é o principal desafio que a sua marca enfrenta hoje?</label>
+  <textarea id="i-desafio" name="Principal desafio"></textarea>
+</div>
+  </div>
+</div>
+<div class="bf-block" data-reveal>
+  <h3>Público</h3>
+  <div class="bf-grid">
+<div class="f wide">
+  <label for="i-publico">Quem é o seu público-alvo? <b aria-hidden="true">*</b></label>
+  <textarea id="i-publico" name="Público-alvo" required></textarea>
+</div>
+<div class="f wide">
+  <span class="lab" id="i-perfil-l">Qual é o perfil econômico do seu público?</span>
+  <small>Marque uma ou mais opções.</small>
+<div class="opts" role="group" aria-labelledby="i-perfil-l">
+  <label class="opt"><input type="checkbox" name="Perfil econômico do público" value="Alto poder aquisitivo"><span>Alto poder aquisitivo</span></label>
+  <label class="opt"><input type="checkbox" name="Perfil econômico do público" value="Médio-alto"><span>Médio-alto</span></label>
+  <label class="opt"><input type="checkbox" name="Perfil econômico do público" value="Médio"><span>Médio</span></label>
+  <label class="opt"><input type="checkbox" name="Perfil econômico do público" value="Popular ou econômico"><span>Popular ou econômico</span></label>
+  <label class="opt"><input type="checkbox" name="Perfil econômico do público" value="Varia ou não sei dizer"><span>Varia ou não sei dizer</span></label>
+</div>
+</div>
+<div class="f wide">
+  <label for="i-sentir">O que você quer que os seus clientes sintam ao ver a sua marca?</label>
+  <textarea id="i-sentir" name="O que o cliente deve sentir"></textarea>
+</div>
+  </div>
+</div>
+<div class="bf-block" data-reveal>
+  <h3>Personalidade e estilo</h3>
+  <div class="bf-grid">
+<div class="f wide">
+  <span class="lab" id="i-pers-l">Como você descreveria a personalidade da sua marca?</span>
+  <small>Marque uma ou mais opções.</small>
+<div class="opts" role="group" aria-labelledby="i-pers-l">
+  <label class="opt"><input type="checkbox" name="Personalidade da marca" value="Séria"><span>Séria</span></label>
+  <label class="opt"><input type="checkbox" name="Personalidade da marca" value="Divertida"><span>Divertida</span></label>
+  <label class="opt"><input type="checkbox" name="Personalidade da marca" value="Elegante"><span>Elegante</span></label>
+  <label class="opt"><input type="checkbox" name="Personalidade da marca" value="Acolhedora"><span>Acolhedora</span></label>
+  <label class="opt"><input type="checkbox" name="Personalidade da marca" value="Moderna"><span>Moderna</span></label>
+  <label class="opt"><input type="checkbox" name="Personalidade da marca" value="Tradicional"><span>Tradicional</span></label>
+  <label class="opt"><input type="checkbox" name="Personalidade da marca" value="Jovem"><span>Jovem</span></label>
+  <label class="opt"><input type="checkbox" name="Personalidade da marca" value="Ousada"><span>Ousada</span></label>
+  <label class="opt"><input type="checkbox" name="Personalidade da marca" value="Confiável"><span>Confiável</span></label>
+  <label class="opt"><input type="checkbox" name="Personalidade da marca" value="Criativa"><span>Criativa</span></label>
+  <label class="opt"><input type="checkbox" name="Personalidade da marca" value="Minimalista"><span>Minimalista</span></label>
+  <label class="opt"><input type="checkbox" name="Personalidade da marca" value="Inovadora"><span>Inovadora</span></label>
+  <label class="opt"><input type="checkbox" name="Personalidade da marca" value="Natural"><span>Natural</span></label>
+  <label class="opt"><input type="checkbox" name="Personalidade da marca" value="Premium"><span>Premium</span></label>
+</div>
+</div>
+<div class="f wide">
+  <label for="i-pers-top">Cite as 3 mais importantes (podem ser outras)</label>
+  <input type="text" id="i-pers-top" name="Três principais da personalidade">
+</div>
+<div class="f wide">
+  <span class="lab" id="i-estilo-l">Que estilo visual você imagina para a sua marca?</span>
+  <small>Marque uma ou mais opções.</small>
+<div class="opts" role="group" aria-labelledby="i-estilo-l">
+  <label class="opt"><input type="checkbox" name="Estilo visual" value="Minimalista"><span>Minimalista</span></label>
+  <label class="opt"><input type="checkbox" name="Estilo visual" value="Clássico"><span>Clássico</span></label>
+  <label class="opt"><input type="checkbox" name="Estilo visual" value="Moderno"><span>Moderno</span></label>
+  <label class="opt"><input type="checkbox" name="Estilo visual" value="Retrô ou vintage"><span>Retrô ou vintage</span></label>
+  <label class="opt"><input type="checkbox" name="Estilo visual" value="Artesanal"><span>Artesanal</span></label>
+  <label class="opt"><input type="checkbox" name="Estilo visual" value="Luxuoso"><span>Luxuoso</span></label>
+  <label class="opt"><input type="checkbox" name="Estilo visual" value="Colorido e divertido"><span>Colorido e divertido</span></label>
+  <label class="opt"><input type="checkbox" name="Estilo visual" value="Geométrico"><span>Geométrico</span></label>
+  <label class="opt"><input type="checkbox" name="Estilo visual" value="Orgânico"><span>Orgânico</span></label>
+  <label class="opt"><input type="checkbox" name="Estilo visual" value="Tecnológico"><span>Tecnológico</span></label>
+  <label class="opt"><input type="checkbox" name="Estilo visual" value="Rústico"><span>Rústico</span></label>
+  <label class="opt"><input type="checkbox" name="Estilo visual" value="Ilustrado"><span>Ilustrado</span></label>
+</div>
+</div>
+<div class="f wide">
+  <label for="i-estilo-top">Cite os 3 mais importantes (podem ser outros)</label>
+  <input type="text" id="i-estilo-top" name="Três principais do estilo visual">
+</div>
+<div class="f">
+  <label for="i-cores">Você tem alguma preferência de cores?</label>
+  <input type="text" id="i-cores" name="Preferência de cores">
+</div>
+<div class="f">
+  <label for="i-cores-evitar">Alguma cor que deve ser evitada?</label>
+  <input type="text" id="i-cores-evitar" name="Cores a evitar">
+</div>
+<div class="f wide">
+  <span class="lab" id="i-fontes-l">Você tem preferência por algum estilo de letra (fonte)?</span>
+  <small>Marque uma ou mais opções.</small>
+<div class="opts" role="group" aria-labelledby="i-fontes-l">
+  <label class="opt"><input type="checkbox" name="Estilo de fontes" value="Com serifa (clássicas)"><span>Com serifa (clássicas)</span></label>
+  <label class="opt"><input type="checkbox" name="Estilo de fontes" value="Sem serifa (modernas)"><span>Sem serifa (modernas)</span></label>
+  <label class="opt"><input type="checkbox" name="Estilo de fontes" value="Manuscritas"><span>Manuscritas</span></label>
+  <label class="opt"><input type="checkbox" name="Estilo de fontes" value="Decorativas"><span>Decorativas</span></label>
+  <label class="opt"><input type="checkbox" name="Estilo de fontes" value="Geométricas"><span>Geométricas</span></label>
+  <label class="opt"><input type="checkbox" name="Estilo de fontes" value="Arredondadas"><span>Arredondadas</span></label>
+  <label class="opt"><input type="checkbox" name="Estilo de fontes" value="Condensadas"><span>Condensadas</span></label>
+  <label class="opt"><input type="checkbox" name="Estilo de fontes" value="Sem preferência"><span>Sem preferência</span></label>
+</div>
+</div>
+<div class="f wide">
+  <span class="lab" id="i-iniciais-l">Você gostaria de um símbolo com as iniciais da marca no logotipo?</span>
+<div class="opts" role="radiogroup" aria-labelledby="i-iniciais-l">
+  <label class="opt"><input type="radio" name="Símbolo com iniciais" value="Sim"><span>Sim</span></label>
+  <label class="opt"><input type="radio" name="Símbolo com iniciais" value="Não"><span>Não</span></label>
+  <label class="opt"><input type="radio" name="Símbolo com iniciais" value="Talvez"><span>Talvez</span></label>
+</div>
+<div class="sub"><label for="i-iniciais">Se sim ou talvez, quais iniciais?</label>
+<input type="text" id="i-iniciais" name="Quais iniciais"></div>
+</div>
+<div class="f wide">
+  <span class="lab" id="i-desenho-l">Você gostaria de um símbolo com algum desenho, forma, figura ou elemento gráfico?</span>
+<div class="opts" role="radiogroup" aria-labelledby="i-desenho-l">
+  <label class="opt"><input type="radio" name="Símbolo com desenho" value="Sim"><span>Sim</span></label>
+  <label class="opt"><input type="radio" name="Símbolo com desenho" value="Não"><span>Não</span></label>
+  <label class="opt"><input type="radio" name="Símbolo com desenho" value="Talvez"><span>Talvez</span></label>
+</div>
+<div class="sub"><label for="i-desenho">Se sim ou talvez, quais desenhos ou elementos?</label>
+<input type="text" id="i-desenho" name="Quais desenhos ou elementos"></div>
+</div>
+  </div>
+</div>
+<div class="bf-block" data-reveal>
+  <h3>Mercado</h3>
+  <div class="bf-grid">
+<div class="f wide">
+  <label for="i-admira">Existe alguma marca ou profissional que você admira? O que você gosta nela(s)?</label>
+  <textarea id="i-admira" name="Marcas e profissionais que admira"></textarea>
+</div>
+<div class="f wide">
+  <label for="i-concorrentes">Quem são os seus principais concorrentes?</label>
+  <textarea id="i-concorrentes" name="Principais concorrentes"></textarea>
+</div>
+<div class="f wide">
+  <label for="i-diferencial">O que faz a sua marca ser diferente dos concorrentes?</label>
+  <textarea id="i-diferencial" name="Diferencial da marca"></textarea>
+</div>
+<div class="f wide">
+  <label for="i-evitar">Há algo que você quer evitar para não se parecer com a identidade de um concorrente?</label>
+  <textarea id="i-evitar" name="O que evitar"></textarea>
+</div>
+  </div>
+</div>
+<div class="bf-block" data-reveal>
+  <h3>Aplicação e materiais</h3>
+  <div class="bf-grid">
+<div class="f wide">
+  <span class="lab" id="i-onde-l">Onde você pretende aplicar a sua identidade visual?</span>
+  <small>Marque uma ou mais opções.</small>
+<div class="opts" role="group" aria-labelledby="i-onde-l">
+  <label class="opt"><input type="checkbox" name="Onde aplicar" value="Redes sociais"><span>Redes sociais</span></label>
+  <label class="opt"><input type="checkbox" name="Onde aplicar" value="Site"><span>Site</span></label>
+  <label class="opt"><input type="checkbox" name="Onde aplicar" value="Papelaria (cartão, papel timbrado)"><span>Papelaria (cartão, papel timbrado)</span></label>
+  <label class="opt"><input type="checkbox" name="Onde aplicar" value="Embalagens e rótulos"><span>Embalagens e rótulos</span></label>
+  <label class="opt"><input type="checkbox" name="Onde aplicar" value="Fachada e sinalização"><span>Fachada e sinalização</span></label>
+  <label class="opt"><input type="checkbox" name="Onde aplicar" value="Uniformes"><span>Uniformes</span></label>
+  <label class="opt"><input type="checkbox" name="Onde aplicar" value="Veículos"><span>Veículos</span></label>
+  <label class="opt"><input type="checkbox" name="Onde aplicar" value="Brindes"><span>Brindes</span></label>
+  <label class="opt"><input type="checkbox" name="Onde aplicar" value="Folder e catálogo"><span>Folder e catálogo</span></label>
+  <label class="opt"><input type="checkbox" name="Onde aplicar" value="Cardápio"><span>Cardápio</span></label>
+  <label class="opt"><input type="checkbox" name="Onde aplicar" value="Apresentações"><span>Apresentações</span></label>
+  <label class="opt"><input type="checkbox" name="Onde aplicar" value="Outro"><span>Outro</span></label>
+</div>
+</div>
+<div class="f wide">
+  <span class="lab" id="i-teve-l">A sua marca já teve uma identidade visual?</span>
+<div class="opts" role="radiogroup" aria-labelledby="i-teve-l">
+  <label class="opt"><input type="radio" name="Já teve identidade visual" value="Sim"><span>Sim</span></label>
+  <label class="opt"><input type="radio" name="Já teve identidade visual" value="Não"><span>Não</span></label>
+</div>
+</div>
+<div class="f wide">
+  <label for="i-existente">Você já tem algum material (logo, paleta de cores, fontes) que eu devo considerar ou manter?</label>
+  <textarea id="i-existente" name="Material existente"></textarea>
+</div>
+<div class="f wide">
+  <label for="i-essencial">Existe algo que você não mencionou, mas considera essencial para o projeto?</label>
+  <textarea id="i-essencial" name="Algo essencial"></textarea>
+</div>
+  </div>
+</div>
+<div class="bf-block" data-reveal>
+  <h3>Como você me conheceu</h3>
+  <div class="bf-grid">
+<div class="f wide">
+  <span class="lab" id="i-conheceu-l">Como você me conheceu?</span>
+<div class="opts" role="radiogroup" aria-labelledby="i-conheceu-l">
+  <label class="opt"><input type="radio" name="Como conheceu" value="Instagram"><span>Instagram</span></label>
+  <label class="opt"><input type="radio" name="Como conheceu" value="Pinterest"><span>Pinterest</span></label>
+  <label class="opt"><input type="radio" name="Como conheceu" value="Google"><span>Google</span></label>
+  <label class="opt"><input type="radio" name="Como conheceu" value="Indicação"><span>Indicação</span></label>
+  <label class="opt"><input type="radio" name="Como conheceu" value="Outro"><span>Outro</span></label>
+</div>
+</div>
+<div class="f wide">
+  <span class="lab" id="i-tempoconhece-l">Há quanto tempo você me conhece?</span>
+<div class="opts" role="radiogroup" aria-labelledby="i-tempoconhece-l">
+  <label class="opt"><input type="radio" name="Há quanto tempo conhece" value="Um dia"><span>Um dia</span></label>
+  <label class="opt"><input type="radio" name="Há quanto tempo conhece" value="Uma semana"><span>Uma semana</span></label>
+  <label class="opt"><input type="radio" name="Há quanto tempo conhece" value="Um mês"><span>Um mês</span></label>
+  <label class="opt"><input type="radio" name="Há quanto tempo conhece" value="Mais de um mês"><span>Mais de um mês</span></label>
+  <label class="opt"><input type="radio" name="Há quanto tempo conhece" value="Mais de um ano"><span>Mais de um ano</span></label>
+</div>
+</div>
+<div class="f wide">
+  <span class="lab" id="i-motivo-l">O que fez você escolher trabalhar comigo?</span>
+  <small>Marque uma ou mais opções.</small>
+<div class="opts" role="group" aria-labelledby="i-motivo-l">
+  <label class="opt"><input type="checkbox" name="Por que me escolheu" value="O portfólio"><span>O portfólio</span></label>
+  <label class="opt"><input type="checkbox" name="Por que me escolheu" value="O jeito de trabalhar"><span>O jeito de trabalhar</span></label>
+  <label class="opt"><input type="checkbox" name="Por que me escolheu" value="Indicação de alguém"><span>Indicação de alguém</span></label>
+  <label class="opt"><input type="checkbox" name="Por que me escolheu" value="Os valores e as condições"><span>Os valores e as condições</span></label>
+  <label class="opt"><input type="checkbox" name="Por que me escolheu" value="A conversa e o atendimento"><span>A conversa e o atendimento</span></label>
+  <label class="opt"><input type="checkbox" name="Por que me escolheu" value="A entrega pronta para produção"><span>A entrega pronta para produção</span></label>
+  <label class="opt"><input type="checkbox" name="Por que me escolheu" value="Outro"><span>Outro</span></label>
+</div>
+</div>
+  </div>
+</div>
+          </fieldset>
+
+          <!-- ===== Material impresso ===== -->
+          <fieldset class="bf-fs" id="bf-print" data-reveal hidden disabled>
+            <legend>3. Sobre o projeto</legend>
+<div class="bf-grid">
+<div class="f wide">
+  <span class="lab" id="m-pecas-l">O que você precisa? <b aria-hidden="true">*</b></span>
+  <small>Pode marcar mais de uma.</small>
+<div class="opts" role="group" aria-labelledby="m-pecas-l">
+  <label class="opt"><input type="checkbox" name="Peças e serviços" value="Cartão de visita" required><span>Cartão de visita</span></label>
+  <label class="opt"><input type="checkbox" name="Peças e serviços" value="Papelaria (papel timbrado, envelope, pasta)"><span>Papelaria (papel timbrado, envelope, pasta)</span></label>
+  <label class="opt"><input type="checkbox" name="Peças e serviços" value="Folder, panfleto ou flyer"><span>Folder, panfleto ou flyer</span></label>
+  <label class="opt"><input type="checkbox" name="Peças e serviços" value="Catálogo ou cardápio"><span>Catálogo ou cardápio</span></label>
+  <label class="opt"><input type="checkbox" name="Peças e serviços" value="Embalagem, rótulo ou tag"><span>Embalagem, rótulo ou tag</span></label>
+  <label class="opt"><input type="checkbox" name="Peças e serviços" value="Banner ou sinalização"><span>Banner ou sinalização</span></label>
+  <label class="opt"><input type="checkbox" name="Peças e serviços" value="Posts e carrosséis"><span>Posts e carrosséis</span></label>
+  <label class="opt"><input type="checkbox" name="Peças e serviços" value="Outro"><span>Outro</span></label>
+</div>
+</div>
+<div class="f wide">
+  <label for="m-projeto">Conte sobre o negócio e o que a peça precisa resolver <b aria-hidden="true">*</b></label>
+  <small>Quem é o seu público e onde a peça vai ser usada?</small>
+  <textarea id="m-projeto" name="Negócio e projeto" required></textarea>
+</div>
+<div class="f wide">
+  <label for="m-formato">Formato, quantidade e acabamento</label>
+  <small>Se já souber: tamanho, quantidade, tipo de papel, acabamento.</small>
+  <input type="text" id="m-formato" name="Formato, quantidade e acabamento">
+</div>
+<div class="f">
+  <label for="m-logo">Logo e identidade visual</label>
+  <select id="m-logo" name="Logo e identidade visual">
+    <option value="">Selecione</option>
+    <option>Tenho os arquivos (vetor ou alta resolução)</option>
+    <option>Tenho, mas só em imagem ou desatualizado</option>
+    <option>Não tenho</option>
+  </select>
+</div>
+<div class="f">
+  <label for="m-textos">Textos e imagens</label>
+  <select id="m-textos" name="Textos e imagens">
+    <option value="">Selecione</option>
+    <option>Já tenho tudo pronto</option>
+    <option>Tenho uma parte</option>
+    <option>Preciso de ajuda com isso</option>
+  </select>
+</div>
+<div class="f wide">
+  <label for="m-grafica">Quem vai imprimir?</label>
+  <select id="m-grafica" name="Impressão">
+    <option value="">Selecione</option>
+    <option>Já tenho gráfica</option>
+    <option>Quero indicação de gráfica</option>
+    <option>É só digital, não vai imprimir</option>
+    <option>Ainda não sei</option>
+  </select>
+</div>
+<div class="f wide">
+  <label for="m-refs">Referências</label>
+  <small>Cole links de sites, perfis ou peças que você gosta.</small>
+  <textarea id="m-refs" name="Referências"></textarea>
+</div>
+<div class="f wide">
+  <label for="m-extra">Mais alguma coisa que eu deva saber?</label>
+  <textarea id="m-extra" name="Observações"></textarea>
+</div>
+</div>
+          </fieldset>
+
+          <!-- ===== Landing page ===== -->
+          <fieldset class="bf-fs" id="bf-lp" data-reveal hidden disabled>
+            <legend>3. Sobre a página</legend>
+<div class="bf-grid">
+<div class="f wide">
+  <span class="lab" id="l-obj-l">Qual é o objetivo da página? <b aria-hidden="true">*</b></span>
+<div class="opts" role="radiogroup" aria-labelledby="l-obj-l">
+  <label class="opt"><input type="radio" name="Objetivo da página" value="Vender um produto ou serviço" required><span>Vender um produto ou serviço</span></label>
+  <label class="opt"><input type="radio" name="Objetivo da página" value="Captar contatos"><span>Captar contatos</span></label>
+  <label class="opt"><input type="radio" name="Objetivo da página" value="Divulgar um evento ou lançamento"><span>Divulgar um evento ou lançamento</span></label>
+  <label class="opt"><input type="radio" name="Objetivo da página" value="Apresentar minha empresa"><span>Apresentar minha empresa</span></label>
+  <label class="opt"><input type="radio" name="Objetivo da página" value="Outro"><span>Outro</span></label>
+</div>
+</div>
+<div class="f wide">
+  <span class="lab" id="l-acao-l">O que o visitante deve fazer ao chegar? <b aria-hidden="true">*</b></span>
+<div class="opts" role="radiogroup" aria-labelledby="l-acao-l">
+  <label class="opt"><input type="radio" name="Ação principal" value="Chamar no WhatsApp" required><span>Chamar no WhatsApp</span></label>
+  <label class="opt"><input type="radio" name="Ação principal" value="Preencher um formulário"><span>Preencher um formulário</span></label>
+  <label class="opt"><input type="radio" name="Ação principal" value="Comprar (link de pagamento ou loja)"><span>Comprar</span></label>
+  <label class="opt"><input type="radio" name="Ação principal" value="Ligar ou ir até o local"><span>Ligar ou ir até o local</span></label>
+  <label class="opt"><input type="radio" name="Ação principal" value="Outra"><span>Outra</span></label>
+</div>
+</div>
+<div class="f wide">
+  <label for="l-negocio">Conte sobre o negócio e quem você quer atingir <b aria-hidden="true">*</b></label>
+  <small>O que você vende ou oferece e para quem?</small>
+  <textarea id="l-negocio" name="Negócio e público" required></textarea>
+</div>
+<div class="f">
+  <label for="l-logo">Logo e identidade visual</label>
+  <select id="l-logo" name="Logo e identidade visual">
+    <option value="">Selecione</option>
+    <option>Tenho os arquivos (vetor ou alta resolução)</option>
+    <option>Tenho, mas só em imagem ou desatualizado</option>
+    <option>Não tenho</option>
+  </select>
+</div>
+<div class="f">
+  <label for="l-textos">Textos e imagens</label>
+  <select id="l-textos" name="Textos e imagens">
+    <option value="">Selecione</option>
+    <option>Já tenho tudo pronto</option>
+    <option>Tenho uma parte</option>
+    <option>Preciso de ajuda com isso</option>
+  </select>
+</div>
+<div class="f wide">
+  <label for="l-dominio">Você já tem um endereço de site (domínio)?</label>
+  <select id="l-dominio" name="Domínio">
+    <option value="">Selecione</option>
+    <option>Já tenho (.com.br, .com ou outro)</option>
+    <option>Ainda não tenho</option>
+    <option>Não sei o que é isso</option>
+  </select>
+</div>
+<div class="f wide">
+  <label for="l-refs">Referências</label>
+  <small>Cole links de sites, perfis ou páginas que você gosta.</small>
+  <textarea id="l-refs" name="Referências"></textarea>
+</div>
+<div class="f wide">
+  <label for="l-extra">Mais alguma coisa que eu deva saber?</label>
+  <textarea id="l-extra" name="Observações"></textarea>
+</div>
+</div>
+          </fieldset>
+
+          <fieldset class="bf-fs" data-reveal>
+            <legend>4. Para fechar</legend>
+            <div class="bf-grid">
+              <div class="f">
+                <label for="p-prazo">Qual é o seu prazo?</label>
+                <select id="p-prazo" name="Prazo">
+                  <option value="">Selecione</option>
+                  <option>Tenho uma data fixa (evento, lançamento)</option>
+                  <option>O quanto antes</option>
+                  <option>Nas próximas semanas</option>
+                  <option>Sem pressa</option>
+                </select>
+              </div>
+              <div class="f">
+                <label for="p-data">Data limite, se tiver</label>
+                <input type="date" id="p-data" name="Data limite">
+              </div>
+              <div class="f wide">
+                <label for="p-valor">Tem uma faixa de investimento em mente?</label>
+                <input type="text" id="p-valor" name="Faixa de investimento">
+              </div>
+
+              <!-- armadilha para robôs: pessoas não veem nem marcam -->
+              <div class="bf-trap" aria-hidden="true">
+                <label>Não marque esta caixa <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
+              </div>
+
+              <div class="f wide">
+                <label class="agree">
+                  <input type="checkbox" id="p-ok" name="Consentimento" value="Sim" required>
+                  <span>Concordo em enviar estas informações ao Guilherme para receber um orçamento. Elas chegam por e-mail, enviadas por um serviço de formulários (Web3Forms).</span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="bf-send" data-reveal>
+            <button class="btn" type="submit" id="bf-btn">Enviar briefing</button>
+            <p class="bf-msg" id="bf-msg" role="status" aria-live="polite" hidden></p>
+          </div>
+
+        </div>
+      </form>
+
+      <section class="bf-ok" id="bf-ok" tabindex="-1" hidden>
+        <h2>Recebi seu briefing</h2>
+        <p>Obrigado por contar tudo isso. Vou ler com calma e te respondo pelo WhatsApp ou pelo e-mail que você informou.</p>
+        <p class="bf-prev" id="bf-prev" hidden>Modo prévia: nada foi enviado de verdade.</p>
+        <a class="btn alt" href="/portfolio/">Ver portfólio</a>
+      </section>
+
+      <div class="wsoon bf-alt" data-reveal>
+        <p><b>Prefere falar direto?</b> Me chame no WhatsApp e a gente conversa.</p>
+        <a class="btn alt" href="https://wa.me/5551993627861">Chamar no WhatsApp</a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>Guilherme Cruz, designer gráfico · São Leopoldo, RS</footer>
+<script src="/js/anim.js" defer></script>
+<script src="/js/briefing.js" defer></script>
+</body>
+</html>
