@@ -17,8 +17,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800;900&family=Syne:wght@500;600;700;800&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800;900&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/anim.css?v=1">
+<script>document.documentElement.className+=' js';window.addEventListener('load',function(){if(!window.__anim)document.documentElement.className+=' no-anim'});</script>
 </head>
 <body>
 <header class="top">
@@ -39,15 +41,15 @@
   <section class="hero panels">
     <div class="wrap">
       <div>
-        <h1>Prazer, eu sou o Gui.</h1>
-        <p class="lead">Designer gráfico e arte-finalista em São Leopoldo. Faço identidade visual, papelaria e materiais impressos que já saem do computador prontos pra produção.</p>
-        <div class="actions">
+        <h1>Prazer, eu sou o Gui<span class="pulse">.</span></h1>
+        <p class="lead" data-reveal style="--d:380ms">Designer gráfico e arte-finalista em São Leopoldo. Faço identidade visual, papelaria e materiais impressos que já saem do computador prontos pra produção.</p>
+        <div class="actions" data-reveal style="--d:500ms">
           <a class="btn" href="#trabalho">Ver meus trabalhos</a>
           <a class="btn alt" href="#contato">Pedir orçamento</a>
         </div>
-        <p class="aside pixel">(além do designer, tem uma história aqui embaixo)</p>
+        <p class="aside pixel" data-reveal style="--d:640ms">(além do designer, tem uma história aqui embaixo)</p>
       </div>
-      <figure>
+      <figure data-reveal="pop" style="--d:250ms">
         <img fetchpriority="high" src="/img/hero.webp" alt="Guilherme sorrindo, fazendo um sinal de paz na testa, com óculos redondos e tatuagens no braço" width="900" height="766">
         <span class="stamp">do conceito à produção</span>
       </figure>
@@ -58,19 +60,20 @@
     <div class="wrap">
       <div>
         <h2>Quem é o Gui?</h2>
-        <div class="box">
-          <p>Sou nerd desde criança, cristão nas horas vagas (e nas não vagas também), e há seis anos transformo ideia em peça pronta pra produção.</p>
-          <p>Passei anos dentro de uma gráfica fazendo arte-final. Foi lá que aprendi que um bom design só está pronto quando funciona no papel, na tela e na mão de quem recebe.</p>
+        <div class="box" data-reveal>
+          <p>Sou nerd desde criança, cristão em tempo integral e, há seis anos, transformo ideias em peças prontas para a produção.</p>
+          <p>Passei anos trabalhando dentro de uma gráfica, fazendo arte-final. Foi lá que aprendi que um bom design vai muito além de ser bonito: ele precisa funcionar no papel, na tela e nas mãos de quem recebe.</p>
+          <p>Gosto de entender como as coisas funcionam, encontrar soluções e transformar ideias em projetos que saem do conceito e ganham vida. Afinal, criatividade é importante, mas saber como fazer acontecer é o que faz a diferença.</p>
         </div>
         <ul class="hooks" aria-label="Assuntos da minha história">
-          <li><a href="/sobre-mim/#infancia">Yu Yu Hakusho e Naruto</a></li>
-          <li><a href="/sobre-mim/#design">Skin de Minecraft</a></li>
-          <li><a href="/sobre-mim/#games">Rap de anime</a></li>
-          <li><a href="/sobre-mim/#fe">O dia em que tudo mudou</a></li>
+          <li data-reveal><a href="/sobre-mim/#infancia">Yu Yu Hakusho e Naruto</a></li>
+          <li data-reveal><a href="/sobre-mim/#design">Skin de Minecraft</a></li>
+          <li data-reveal><a href="/sobre-mim/#games">Rap de anime</a></li>
+          <li data-reveal><a href="/sobre-mim/#fe">O dia em que tudo mudou</a></li>
         </ul>
-        <a class="more" href="/sobre-mim/">Ler minha história completa →</a>
+        <a class="more" data-reveal href="/sobre-mim/">Ler minha história completa →</a>
       </div>
-      <figure>
+      <figure data-reveal="pop">
         <img loading="lazy" decoding="async" src="/img/infancia.webp" alt="Guilherme criança, sorrindo, com uma camiseta preta do Naruto" width="900" height="684">
         <figcaption>( registro mais antigo )</figcaption>
       </figure>
@@ -80,13 +83,13 @@
   <section class="achv" id="conquistas">
     <div class="wrap">
       <h2>Conquistas desbloqueadas</h2>
-      <p class="sub">um pedacinho da minha ficha</p>
+      <p class="sub" data-reveal style="--d:160ms">um pedacinho da minha ficha</p>
       <div class="toasts three">
-        <div class="toast"><canvas class="px" data-icon="grass" width="8" height="8" aria-hidden="true"></canvas><div><div class="t">Meu jogo favorito</div><div class="d">Minecraft, jogo desde 2011</div></div></div>
-        <div class="toast"><canvas class="px" data-icon="book" width="8" height="8" aria-hidden="true"></canvas><div><div class="t">Mangá toda semana</div><div class="d">Naruto há 17 anos e One Piece há 13</div></div></div>
-        <div class="toast"><canvas class="px" data-icon="cat" width="8" height="8" aria-hidden="true"></canvas><div><div class="t">Cinco gatos em casa</div><div class="d">E amor por qualquer bicho, até inseto</div></div></div>
+        <div class="toast" data-reveal="side"><canvas class="px" data-icon="grass" width="8" height="8" aria-hidden="true"></canvas><div><div class="t">Meu jogo favorito</div><div class="d">Minecraft, jogo desde 2011</div></div></div>
+        <div class="toast" data-reveal="side"><canvas class="px" data-icon="book" width="8" height="8" aria-hidden="true"></canvas><div><div class="t">Mangá toda semana</div><div class="d">Naruto há 17 anos e One Piece há 13</div></div></div>
+        <div class="toast" data-reveal="side"><canvas class="px" data-icon="cat" width="8" height="8" aria-hidden="true"></canvas><div><div class="t">Cinco gatos em casa</div><div class="d">E amor por qualquer bicho, até inseto</div></div></div>
       </div>
-      <a class="more" href="/sobre-mim/#conquistas">Ver todas as conquistas →</a>
+      <a class="more" data-reveal href="/sobre-mim/#conquistas">Ver todas as conquistas →</a>
     </div>
   </section>
 
@@ -98,12 +101,12 @@
   <section class="work" id="trabalho">
     <div class="wrap">
       <h2>Peças de clientes reais</h2>
-      <p class="intro">Campanhas e peças de produto que já saíram do papel. Cada uma foi pensada pro formato em que ia ser usada.</p>
+      <p class="intro" data-reveal style="--d:160ms">Campanhas e peças de produto que já saíram do papel. Cada uma foi pensada pro formato em que ia ser usada.</p>
       <div class="wgrid" id="home-works" aria-live="polite">
         <p class="intro">Carregando trabalhos…</p>
       </div>
-      <a class="more" href="/portfolio/">Ver o portfólio completo →</a>
-      <div class="wsoon">
+      <a class="more" data-reveal href="/portfolio/">Ver o portfólio completo →</a>
+      <div class="wsoon" data-reveal>
         <p><b>Papelaria e impressos:</b> estou fotografando as peças reais (panfletos, certificados, tags) pra entrar aqui.</p>
         <a class="btn alt" href="#contato">Quero ver mais</a>
       </div>
@@ -113,19 +116,19 @@
   <section class="services panels" id="servicos">
     <div class="wrap">
       <h2>O que eu faço</h2>
-      <p class="intro">Projetos pontuais ou sistemas visuais completos. Antes de começar, a gente define escopo, materiais, prazo e investimento.</p>
+      <p class="intro" data-reveal style="--d:160ms">Projetos pontuais ou sistemas visuais completos. Antes de começar, a gente define escopo, materiais, prazo e investimento.</p>
       <div class="sgrid">
-        <div class="panel big">
+        <div class="panel big" data-reveal>
           <h3>Papelaria e materiais impressos</h3>
           <p>Cartões, folders, catálogos, cardápios, embalagens, banners e sinalização. Cada peça considera formato, leitura, acabamento e como vai ser produzida.</p>
           <ul><li>Arte-final</li><li>Fechamento para gráfica</li><li>Sangria e área de segurança</li><li>Orientação de materiais e acabamentos</li></ul>
           <span class="seal">CMYK, 300 dpi, arquivo fechado</span>
         </div>
-        <div class="panel">
+        <div class="panel" data-reveal>
           <h3>Identidade visual</h3>
           <p>Logo, paleta, tipografia, elementos gráficos e manual de uso, tudo pensado pra funcionar nas aplicações.</p>
         </div>
-        <div class="panel">
+        <div class="panel" data-reveal>
           <h3>Conteúdo e campanhas</h3>
           <p>Posts, carrosséis, templates e campanhas, com unidade visual entre os formatos.</p>
         </div>
@@ -136,14 +139,14 @@
   <section class="process">
     <div class="wrap">
       <h2>Quatro etapas, processo claro</h2>
-      <p class="intro">O fluxo se adapta ao tamanho do projeto, mas as etapas são sempre as mesmas.</p>
+      <p class="intro" data-reveal style="--d:160ms">O fluxo se adapta ao tamanho do projeto, mas as etapas são sempre as mesmas.</p>
       <ol class="steps">
-        <li><div class="num">1</div><h3>Briefing</h3><p>Reúno as informações sobre o negócio, o público e os materiais. Definimos o escopo e o que o projeto precisa resolver.</p></li>
-        <li><div class="num">2</div><h3>Direção visual</h3><p>Organizo as referências e apresento o conceito que guia tipografia, cores, composição e linguagem.</p></li>
-        <li><div class="num">3</div><h3>Desenvolvimento e ajustes</h3><p>Desenvolvo as peças previstas. As rodadas de ajuste são combinadas no início.</p></li>
-        <li><div class="num">4</div><h3>Entrega</h3><p>Arquivos organizados nos formatos certos pra uso digital ou produção gráfica.</p></li>
+        <li data-reveal><div class="num">1</div><h3>Briefing</h3><p>Reúno as informações sobre o negócio, o público e os materiais. Definimos o escopo e o que o projeto precisa resolver.</p></li>
+        <li data-reveal><div class="num">2</div><h3>Direção visual</h3><p>Organizo as referências e apresento o conceito que guia tipografia, cores, composição e linguagem.</p></li>
+        <li data-reveal><div class="num">3</div><h3>Desenvolvimento e ajustes</h3><p>Desenvolvo as peças previstas. As rodadas de ajuste são combinadas no início.</p></li>
+        <li data-reveal><div class="num">4</div><h3>Entrega</h3><p>Arquivos organizados nos formatos certos pra uso digital ou produção gráfica.</p></li>
       </ol>
-      <p class="note">Arquivos editáveis podem ser incluídos quando estiverem previstos no escopo.</p>
+      <p class="note" data-reveal>Arquivos editáveis podem ser incluídos quando estiverem previstos no escopo.</p>
     </div>
   </section>
 
@@ -151,17 +154,17 @@
     <div class="wrap">
       <div>
         <h2>Gostou de me conhecer um pouco mais?</h2>
-        <p>Então bora trocar uma ideia sobre o seu projeto!</p>
-        <p class="naruto">Como diria o Naruto, <b>dattebayo</b></p>
-        <div class="actions">
+        <p data-reveal style="--d:160ms">Então bora trocar uma ideia sobre o seu projeto!</p>
+        <p class="naruto" data-reveal style="--d:260ms">Como diria o Naruto, <b>dattebayo</b></p>
+        <div class="actions" data-reveal style="--d:360ms">
           <a class="btn light" href="https://wa.me/5551993627861">Chamar no WhatsApp</a>
         </div>
-        <div class="alts">
+        <div class="alts" data-reveal style="--d:460ms">
           <a href="https://www.instagram.com/guicruzdesign/" rel="noopener">@guicruzdesign no Instagram</a>
           <a href="mailto:guilhermecruz.designer@gmail.com">guilhermecruz.designer@gmail.com</a>
         </div>
       </div>
-      <figure>
+      <figure data-reveal="pop">
         <img loading="lazy" decoding="async" src="/img/contato.webp" alt="Guilherme criança, de boné, fazendo sinal de paz com as duas mãos" width="680" height="790">
       </figure>
     </div>
@@ -172,5 +175,6 @@
 <footer>Guilherme Cruz, designer gráfico · São Leopoldo, RS</footer>
 <script src="/js/main.js" defer></script>
 <script src="/js/portfolio.js" defer></script>
+<script src="/js/anim.js" defer></script>
 </body>
 </html>
