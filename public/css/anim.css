@@ -1,71 +1,7 @@
-/* Animações da home (ligadas pelo js/anim.js). Não muda cores nem layout: só movimento. */
-
-/* 1) Títulos: cada palavra sobe de dentro de uma máscara, uma depois da outra */
-.js-slide .sw{display:inline-block; overflow:hidden; vertical-align:top; padding:.16em .14em .18em 0; margin:-.16em -.14em -.18em 0;}
-.js-slide .si{display:inline-block; transform:translateY(120%); transition:transform .75s cubic-bezier(.22,1,.36,1); transition-delay:calc(var(--i) * 80ms);}
-.js-slide.in .si{transform:none;}
-
-/* 2) Blocos entram ao rolar a página.
-   Usa as propriedades "translate", "scale" e "rotate" (e não "transform"),
-   para não apagar as inclinações que o site já tem (foto, selos). */
-html.js [data-reveal]{
-  opacity:0; translate:0 32px;
-  transition:
-    opacity .8s ease var(--d,0ms),
-    translate .9s cubic-bezier(.22,1,.36,1) var(--d,0ms),
-    transform .15s, box-shadow .15s, letter-spacing .25s, color .15s;
-}
-/* fotos: chegam um pouco tortas e assentam */
-html.js [data-reveal="pop"]{
-  translate:0 44px; scale:.93; rotate:-3deg;
-  transition:
-    opacity .8s ease var(--d,0ms),
-    translate .9s cubic-bezier(.22,1,.36,1) var(--d,0ms),
-    scale .9s cubic-bezier(.2,.9,.3,1.15) var(--d,0ms),
-    rotate .9s cubic-bezier(.22,1,.36,1) var(--d,0ms);
-}
-/* conquistas: entram pela direita, como os avisos do Minecraft */
-html.js [data-reveal="side"]{translate:60px 0;}
-html.js [data-reveal].in{opacity:1; translate:none; scale:none; rotate:none;}
-
-/* 3) Carimbos: batem na tela depois que a foto / o painel aparece */
-html.js .hero .stamp,
-html.js .panel[data-reveal] .seal{opacity:0;}
-.hero figure.in .stamp,
-.panel.in .seal{animation:stamp .5s cubic-bezier(.2,.9,.3,1.2) .8s both;}
-@keyframes stamp{
-  0%{opacity:0; scale:1.8; rotate:10deg;}
-  100%{opacity:1; scale:1; rotate:0deg;}
-}
-
-/* 4) Ponto laranja pulsando no fim do título principal */
-.pulse{display:inline-block; color:var(--brasa); transform-origin:50% 88%; animation:beat 2.4s ease-in-out infinite;}
-@keyframes beat{0%,100%{transform:scale(1);} 50%{transform:scale(.7);}}
-
-/* 5) Pequenos movimentos ao passar o mouse */
-.more{transition:letter-spacing .25s, color .15s;}
-.more:hover{letter-spacing:.05em;}
-.panel{transition:transform .15s, box-shadow .15s;}
-.panel:hover{transform:translate(-3px,-3px); box-shadow:11px 11px 0 var(--brasa);}
-.steps li{transition:transform .15s, box-shadow .15s;}
-.steps li:hover{transform:translate(-3px,-3px); box-shadow:6px 6px 0 var(--brasa);}
-
-/* 6) Ponto que acompanha o mouse (só aparece em tela com mouse).
-   Contorno escuro: aparece tanto no fundo verde quanto no laranja. */
-.cursor-dot{position:fixed; left:0; top:0; width:16px; height:16px; margin:-8px 0 0 -8px; border-radius:50%; background:var(--brasa); border:2px solid var(--tinta); pointer-events:none; z-index:60; opacity:0; transition:width .2s, height .2s, margin .2s, opacity .2s;}
-.cursor-dot.on{opacity:1;}
-.cursor-dot.big{width:54px; height:54px; margin:-27px 0 0 -27px; opacity:.5;}
-
-/* Se o anim.js não carregar, nada fica escondido */
-html.no-anim [data-reveal]{opacity:1!important; translate:none!important; scale:none!important; rotate:none!important;}
-html.no-anim .stamp, html.no-anim .seal{opacity:1!important;}
-
-/* Quem pede menos movimento no sistema vê tudo parado e já visível */
+/* Animações (ligadas pelo js/anim.js). Versão enxuta: os blocos só aparecem suavemente ao rolar. */
+html.js [data-reveal]{opacity:0; translate:0 18px; transition:opacity .5s ease var(--d,0ms), translate .5s ease var(--d,0ms);}
+html.js [data-reveal].in{opacity:1; translate:none;}
+html.no-anim [data-reveal]{opacity:1; translate:none; transition:none;}
 @media (prefers-reduced-motion:reduce){
-  html.js [data-reveal]{opacity:1; translate:none; scale:none; rotate:none; transition:none;}
-  html.js .hero .stamp, html.js .panel[data-reveal] .seal{opacity:1;}
-  .hero figure.in .stamp, .panel.in .seal{animation:none;}
-  .pulse{animation:none;}
-  .cursor-dot{display:none;}
-  .more, .panel, .steps li{transition:none;}
+  html.js [data-reveal]{opacity:1; translate:none; transition:none;}
 }

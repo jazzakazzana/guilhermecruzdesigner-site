@@ -95,7 +95,8 @@
     return dados;
   }
 
-  function sucesso() {
+  function sucesso(real) {
+    if (real) { try { window.dispatchEvent(new Event('briefing:enviado')); } catch (e) {} }
     form.hidden = true;
     ok.hidden = false;
     if (window.__BRIEFING_PREVIEW__ && prev) prev.hidden = false;
@@ -141,7 +142,7 @@
       return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok && j.success !== false }; });
     }).then(function (res) {
       clearTimeout(t); enviando = false;
-      if (res.ok) { sucesso(); return; }
+      if (res.ok) { sucesso(true); return; }
       throw new Error('falhou');
     }).catch(function () {
       clearTimeout(t); enviando = false;

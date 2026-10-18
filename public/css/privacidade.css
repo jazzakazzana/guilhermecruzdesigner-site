@@ -1,0 +1,11 @@
+/* Página /privacidade: texto corrido, fácil de ler */
+.prose{max-width:68ch;}
+.prose h2{font-size:clamp(1.15rem,2.6vw,1.5rem); margin:42px 0 12px;}
+.prose h2:first-child{margin-top:0;}
+.prose p, .prose li{font-weight:600; margin-bottom:12px;}
+.prose ul{margin:0 0 14px 1.2em; padding:0; list-style:square;}
+.prose a{text-underline-offset:3px;}
+.prose .upd{color:var(--taupe); font-weight:700;}
+.prose .box{border:4px solid var(--tinta); background:var(--pixel-yellow); padding:14px 18px; margin:0 0 26px;}
+.prose .box p{margin:0;}
+.prose .box, .prose .box p, .prose .box a{color:var(--tinta);}
