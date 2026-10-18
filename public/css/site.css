@@ -1,0 +1,158 @@
+/* Versão 2 do visual: paleta nova, fontes legíveis, sem fundos decorativos.
+   Carregado DEPOIS de style.css nas páginas públicas (o painel /admin não usa este arquivo). */
+
+:root{
+  --mata:#102716;      /* Deep Forest */
+  --mata-2:#4A644D;    /* Swamp Green */
+  --brasa:#DE6D20;     /* Orange */
+  --papel:#FFFFFF;     /* White */
+  --smoke:#E5E5E5;     /* Smoke Grey */
+  --tinta:#111111;     /* Black */
+  --taupe:#515151;     /* Dark Grey */
+  --f-display:'Plus Jakarta Sans','Segoe UI',Arial,sans-serif;
+  --f-body:'Inter','Segoe UI',Arial,sans-serif;
+  --f-pixel:'Inter','Segoe UI',Arial,sans-serif;
+}
+html,body{background:var(--mata);}
+body{font-family:var(--f-body); font-weight:400; font-size:18px; line-height:1.6;}
+
+/* fundos decorativos (quadrados de mangá) removidos */
+.panels,.panels.dark{background-image:none;}
+
+/* títulos: sempre minúsculas com inicial maiúscula, fonte simples */
+h1,h2,h3{font-family:var(--f-display); font-weight:800; text-transform:none; letter-spacing:-0.02em; line-height:1.12;}
+h2{font-size:clamp(1.8rem,4vw,2.8rem);}
+.more,.filters button,.wcard .n,.list .t,.admin legend{text-transform:none;}
+.pixel,figcaption,.quote,.stamp,.seal,.meta,.chips li,.hooks a,.wcard .c,.panel li,footer{font-family:var(--f-body); font-weight:500;}
+.pixel,figcaption{font-weight:500;}
+
+/* botões: texto branco no laranja */
+.btn{font-family:var(--f-display); font-weight:800; font-size:1rem; padding:15px 26px; border:3px solid var(--tinta); background:var(--brasa); color:var(--papel); box-shadow:5px 5px 0 var(--tinta); text-transform:none;}
+.btn:hover{transform:translate(2px,2px); box-shadow:3px 3px 0 var(--tinta);}
+.btn.alt{background:var(--papel); color:var(--tinta);}
+.btn.light{background:var(--brasa); color:var(--papel); border-color:var(--papel); box-shadow:5px 5px 0 var(--papel);}
+.btn.light:hover{box-shadow:3px 3px 0 var(--papel);}
+.btn.white{background:var(--papel); color:var(--tinta); border-color:var(--papel); box-shadow:5px 5px 0 var(--brasa);}
+.btn.white:hover{box-shadow:3px 3px 0 var(--brasa);}
+
+/* cabeçalho fixo no topo */
+.top{position:sticky; top:0; z-index:50; background:var(--mata); border-bottom:3px solid var(--brasa);}
+.brand{font-family:var(--f-display); font-weight:800; font-size:1.1rem; text-transform:none; letter-spacing:-0.01em;}
+.top nav{font-family:var(--f-body); font-weight:600; font-size:1rem;}
+.top .btn{padding:10px 18px; font-size:0.9rem; border-width:2px; box-shadow:3px 3px 0 var(--tinta);}
+
+/* hero */
+.hero{background-color:var(--mata); padding:72px 0 84px;}
+.hero .wrap{grid-template-columns:1.1fr 0.9fr; gap:56px;}
+.hero .kicker{display:inline-block; font-weight:600; font-size:1rem; color:var(--brasa); margin-bottom:14px;}
+.hero h1{font-size:clamp(2.8rem,7vw,5rem); margin-bottom:22px;}
+.hero p.lead{font-size:1.25rem; max-width:34ch; margin-bottom:32px; color:#e6ece7; font-weight:400;}
+.hero figure{transform:none;}
+.hero figure img{border:4px solid var(--papel); box-shadow:10px 10px 0 var(--brasa);}
+
+/* seções claras */
+.sec{padding:84px 0;}
+.sec h2{margin-bottom:12px;}
+.sec .intro{max-width:54ch; margin-bottom:38px; font-weight:400;}
+.sec.white{background:var(--papel); color:var(--tinta);}
+.sec.smoke{background:var(--smoke); color:var(--tinta);}
+.sec.forest{background:var(--mata); color:var(--papel);}
+.sec.swamp{background:var(--mata-2); color:var(--papel);}
+.sec.white .intro,.sec.smoke .intro{color:var(--taupe);}
+.sec.forest .intro,.sec.swamp .intro{color:#e6ece7;}
+
+/* serviços */
+.sgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+.sgrid .panel{padding:26px; border:3px solid var(--tinta); box-shadow:6px 6px 0 var(--brasa); background:var(--papel); color:var(--tinta);}
+.sgrid .panel.big{grid-row:auto; background:var(--papel);}
+.sgrid .panel h3{font-size:1.3rem; margin-bottom:10px;}
+.sgrid .panel p{font-weight:400; color:var(--taupe);}
+.sgrid .panel ul{margin-top:16px; display:flex; flex-wrap:wrap; gap:8px; list-style:none;}
+.sgrid .panel li{font-family:var(--f-body); font-weight:500; font-size:0.88rem; background:var(--smoke); color:var(--tinta); padding:4px 10px;}
+.sgrid .price{margin-top:18px; font-weight:700; color:var(--tinta); font-size:0.98rem;}
+.sec .also{margin-top:26px; color:var(--taupe);}
+
+/* skills */
+.skills{list-style:none; display:flex; flex-wrap:wrap; gap:12px;}
+.skills li{font-family:var(--f-display); font-weight:700; font-size:1.02rem; background:var(--papel); color:var(--tinta); padding:10px 18px; border:3px solid var(--tinta); box-shadow:4px 4px 0 var(--tinta);}
+
+/* carrossel de projetos */
+.carousel{position:relative;}
+#home-works{display:flex; gap:22px; overflow-x:auto; scroll-snap-type:x mandatory; padding:6px 8px 26px 0; scrollbar-width:thin; scrollbar-color:var(--tinta) transparent; -webkit-overflow-scrolling:touch;}
+#home-works .wcard{flex:0 0 min(270px,72%); scroll-snap-align:start;}
+#home-works .empty,#home-works > p{flex:1 0 100%;}
+.wcard img{border:3px solid var(--tinta); box-shadow:6px 6px 0 var(--tinta);}
+.wcard .n{font-family:var(--f-display); font-weight:800; font-size:1rem; text-transform:none;}
+.wcard .p{font-weight:400;}
+.car-ctl{display:flex; gap:12px; margin:6px 0 4px;}
+.car-btn{font-family:var(--f-display); font-weight:800; font-size:1.2rem; width:48px; height:48px; border:3px solid var(--tinta); background:var(--papel); color:var(--tinta); box-shadow:3px 3px 0 var(--tinta); cursor:pointer;}
+.car-btn:hover{background:var(--brasa); color:var(--papel);}
+.work .more,.sec .more{color:var(--tinta); border-bottom-color:var(--brasa);}
+.sec.forest .more{color:var(--papel);}
+
+/* processo */
+.steps{gap:20px;}
+.steps li{border:3px solid var(--tinta); background:var(--papel); padding:22px 20px;}
+.steps .num{font-family:var(--f-display); font-weight:800; font-size:2.2rem; color:var(--brasa);}
+.steps h3{font-size:1.05rem; margin:8px 0 8px;}
+.steps p{font-weight:400; color:var(--taupe); font-size:0.98rem;}
+.sec.smoke .steps li{background:var(--papel);}
+
+/* chamada final */
+.cta{background:var(--mata); color:var(--papel); padding:96px 0; text-align:center;}
+.cta h2{font-size:clamp(2rem,5vw,3.4rem); max-width:20ch; margin:0 auto 18px;}
+.cta p{font-size:1.2rem; max-width:44ch; margin:0 auto 32px; color:#e6ece7;}
+.cta .actions{display:flex; flex-wrap:wrap; gap:16px; justify-content:center;}
+.cta .alts{margin-top:28px; font-weight:600;}
+.cta .alts a{text-underline-offset:4px;}
+
+/* rodapé */
+footer{background:var(--tinta); padding:26px 20px; font-size:0.98rem; color:#d0d0d0; text-align:center; line-height:1.9;}
+footer a{color:#fff; text-underline-offset:3px;}
+footer .ck-open{font:inherit; background:none; border:0; color:#fff; text-decoration:underline; cursor:pointer; padding:0;}
+
+/* botão do WhatsApp sempre visível */
+.wa-float{position:fixed; right:18px; bottom:18px; z-index:40; display:inline-flex; align-items:center; gap:8px; font-family:var(--f-display); font-weight:800; font-size:0.98rem; text-decoration:none; background:var(--brasa); color:var(--papel); border:3px solid var(--tinta); box-shadow:4px 4px 0 var(--tinta); padding:12px 18px;}
+.wa-float:hover{transform:translate(2px,2px); box-shadow:2px 2px 0 var(--tinta);}
+
+/* páginas internas claras */
+.page-light{background:var(--papel);}
+.page-light .intro,.page-light .desc{font-weight:400;}
+.filters button{font-family:var(--f-display); font-weight:700;}
+
+/* Como funciona */
+.hero-sm{background:var(--mata); padding:64px 0 56px;}
+.hero-sm h1{font-size:clamp(2.4rem,6vw,4rem); margin-bottom:14px;}
+.hero-sm p{font-size:1.2rem; max-width:52ch; color:#e6ece7;}
+.two{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+.card{border:3px solid var(--tinta); background:var(--papel); padding:26px; box-shadow:6px 6px 0 var(--brasa); color:var(--tinta);}
+.card h3{font-size:1.25rem; margin-bottom:10px;}
+.card p,.card li{font-weight:400; color:var(--taupe);}
+.card ul{margin:10px 0 0 20px;}
+.card li + li{margin-top:6px;}
+.faq details{border:3px solid var(--tinta); background:var(--papel); padding:16px 20px; margin-bottom:14px;}
+.faq summary{font-family:var(--f-display); font-weight:700; cursor:pointer;}
+.faq p{margin-top:10px; color:var(--taupe);}
+
+/* responsivo */
+@media (max-width:880px){
+  body{font-size:17px;}
+  .hero .wrap,.two{grid-template-columns:1fr;}
+  .sgrid,.steps{grid-template-columns:1fr;}
+  .sec{padding:60px 0;}
+  .hero{padding:44px 0 64px;}
+  .top{position:static;}
+  .wa-float{right:12px; bottom:12px; padding:11px 15px;}
+}
+
+/* briefing / pedir orçamento: mesmo padrão de maiúsculas */
+html .bf-fs > legend,html .c-title,html .bf-block > h3{text-transform:none;}
+.sgrid .panel p.price{font-weight:700; color:var(--tinta);}
+
+@media (max-width:520px){.top nav{gap:16px; font-size:0.92rem;}}
+
+/* habilidades com nível */
+.skills small{display:block; font-family:var(--f-body); font-weight:500; font-size:0.78rem; color:var(--taupe); margin-top:2px;}
+.skills + .skills{margin-top:20px;}
+.skills.tags li{font-family:var(--f-body); font-weight:600; font-size:0.95rem; border-width:2px; box-shadow:none; background:transparent; color:var(--papel); border-color:var(--papel);}
+.hero figure img{aspect-ratio:1/1; object-fit:cover; width:100%;}

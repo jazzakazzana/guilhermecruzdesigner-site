@@ -22,7 +22,7 @@ Como o projeto funciona
 Hospedado no Cloudflare Pages, ligado a este repositório do GitHub. Pasta publicada: `public`. Não há etapa de build.
 Cada vez que a branch `main` recebe uma mudança, o site de verdade é atualizado sozinho. Por isso `main` é intocável.
 Branches que não são a `main` ganham um endereço de prévia no Cloudflare, onde o Gui confere antes de aprovar.
-Páginas: `/` (home), `/sobre-mim/`, `/portfolio/`, `/projeto/` (detalhe de trabalho), `/admin/` (painel, protegido por login do Cloudflare Access).
+Páginas: `/` (home), `/como-funciona/`, `/briefing/` ("Pedir orçamento"), `/privacidade/`, `/sobre-mim/` (só no rodapé), `/portfolio/`, `/projeto/` (detalhe de trabalho), `/admin/` (painel, protegido por login do Cloudflare Access).
 Home: `public/index.html`. Estilos: `public/css/style.css` (base) e `public/css/anim.css` (animações). Scripts: `public/js/main.js` (ícones de pixel das conquistas), `public/js/portfolio.js` (trabalhos), `public/js/anim.js` (animações), `public/js/admin.js` (painel).
 As animações usam o atributo `data-reveal` nos elementos do HTML e respeitam "reduzir movimento". Se o `anim.js` falhar, o site aparece normal.
 Os trabalhos do portfólio vêm do banco D1 (`/api/works`) e, se falhar, de `public/data/works.json`. O Gui cadastra novos trabalhos pelo `/admin/`, não pelo código.
