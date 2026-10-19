@@ -22,7 +22,7 @@
       '.ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;background:#FFFFFF;color:#111111;border:5px solid #111111;box-shadow:8px 8px 0 #DE6D20;padding:18px 20px;font-family:Inter,Arial,sans-serif;font-weight:700;font-size:.98rem;line-height:1.45}' +
     '.ck p{margin:0 0 14px}.ck a{color:#111111;text-underline-offset:3px}' +
     '.ck .bt{display:flex;flex-wrap:wrap;gap:10px}' +
-    '.ck button{font:inherit;font-family:Unbounded,Arial Black,sans-serif;font-weight:800;font-size:.8rem;text-transform:uppercase;padding:11px 18px;border:4px solid #111111;background:#FFFFFF;color:#111111;cursor:pointer}' +
+    '.ck button{font:inherit;font-family:"Plus Jakarta Sans",Arial,sans-serif;font-weight:800;font-size:.9rem;text-transform:none;padding:11px 18px;border:4px solid #111111;background:#FFFFFF;color:#111111;cursor:pointer}' +
     '.ck button.sim{background:#DE6D20}.ck button:focus-visible{outline:3px solid #111111;outline-offset:3px}' +
     '.ck-open{font:inherit;color:inherit;background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}';
   document.head.appendChild(st);
