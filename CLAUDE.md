@@ -27,9 +27,9 @@ Home: `public/index.html`. Estilos: `public/css/style.css` (base) e `public/css/
 As animações usam o atributo `data-reveal` nos elementos do HTML e respeitam "reduzir movimento". Se o `anim.js` falhar, o site aparece normal.
 Os trabalhos do portfólio vêm do banco D1 (`/api/works`) e, se falhar, de `public/data/works.json`. O Gui cadastra novos trabalhos pelo `/admin/`, não pelo código.
 Identidade visual (fechada)
-Cores: Preto `#08090A`, Taupe `#534949`, Branco gelo `#FAF9FA`, Verde escuro `#0C2301`, Laranja `#FF4D00` (apoio `#99320A`).
-Fontes: Unbounded (títulos) e Syne (textos e etiquetas). Não adicionar outras.
-Estilo: painéis de mangá desenhados do zero, bordas grossas, sombras sólidas deslocadas, seções alternando verde e laranja, faixa em movimento, conquistas no estilo Minecraft.
+Cores (paleta da designer, desde 18/10/2026): Deep Forest `#102716`, Swamp Green `#4A644D`, Orange `#DE6D20`, Black `#111111`, Dark Grey `#515151`, Smoke Grey `#E5E5E5`, White `#FFFFFF`. O `/admin/` ainda usa as cores antigas via `style.css`.
+Fontes: Plus Jakarta Sans (títulos, 700/800) e Inter (textos). Não adicionar outras. Títulos em minúsculas com inicial maiúscula (sem caixa alta).
+Estilo: limpo, bordas de 3px, sombras sólidas deslocadas, sem fundos decorativos (nada de quadrados de mangá), animação discreta. Botão principal laranja com texto branco. Mudanças de visual do site público vão em `public/css/site.css`.
 Nunca usar personagens, logos ou obras de terceiros (anime, jogos) nas peças visuais. Linguagem visual original.
 Ao terminar qualquer tarefa
 Rode o site localmente (`python3 -m http.server` dentro de `public`) e confira se a página mexida abre sem erro.
