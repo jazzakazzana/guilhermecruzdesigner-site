@@ -9,9 +9,10 @@
   --smoke:#E5E5E5;     /* Smoke Grey */
   --tinta:#111111;     /* Black */
   --taupe:#515151;     /* Dark Grey */
-  --f-display:'Plus Jakarta Sans','Segoe UI',Arial,sans-serif;
-  --f-body:'Inter','Segoe UI',Arial,sans-serif;
-  --f-pixel:'Inter','Segoe UI',Arial,sans-serif;
+  --f-display:'Dela Gothic One','Arial Black',Arial,sans-serif;
+  --f-body:'DM Sans','Segoe UI',Arial,sans-serif;
+  --f-pixel:'DM Sans','Segoe UI',Arial,sans-serif;
+  font-synthesis-weight:none; /* a Dela Gothic One só tem um peso: não engrossar de mentira */
 }
 html,body{background:var(--mata);}
 body{font-family:var(--f-body); font-weight:400; font-size:18px; line-height:1.6;}
@@ -156,3 +157,16 @@ html .bf-fs > legend,html .c-title,html .bf-block > h3{text-transform:none;}
 .skills + .skills{margin-top:20px;}
 .skills.tags li{font-family:var(--f-body); font-weight:600; font-size:0.95rem; border-width:2px; box-shadow:none; background:transparent; color:var(--papel); border-color:var(--papel);}
 .hero figure img{aspect-ratio:1/1; object-fit:cover; width:100%;}
+
+/* cards de trabalho: troca de fotos (mouse no computador, setinhas no celular) */
+.wcard{position:relative;}
+.wlink{display:block; text-decoration:none; color:inherit;}
+.wlink:hover img{transform:translate(3px,3px); box-shadow:3px 3px 0 var(--tinta);}
+.wnav{position:absolute; left:0; top:0; width:100%; aspect-ratio:5/6; display:flex; align-items:center; justify-content:space-between; padding:0 8px; pointer-events:none;}
+.wnav button{pointer-events:auto; width:36px; height:36px; font-family:var(--f-display); font-weight:800; font-size:1.3rem; line-height:1; background:var(--papel); color:var(--tinta); border:2px solid var(--tinta); box-shadow:2px 2px 0 var(--tinta); cursor:pointer; opacity:0; transition:opacity .15s;}
+@media (hover:hover){.wnav button:hover{background:var(--brasa); color:var(--papel);}}
+.wcard:hover .wnav button,.wnav button:focus-visible{opacity:1;}
+.wdots{position:absolute; left:0; right:0; bottom:12px; display:flex; justify-content:center; gap:6px;}
+.wdots span{width:8px; height:8px; background:var(--papel); border:1px solid var(--tinta);}
+.wdots span.on{background:var(--brasa);}
+@media (hover:none){.wnav button{opacity:1;}}
