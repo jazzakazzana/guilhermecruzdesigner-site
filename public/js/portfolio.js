@@ -20,18 +20,74 @@
     return getJSON('/api/works').catch(function () { return getJSON('/data/works.json'); });
   }
 
+  // fotos do trabalho: capa primeiro, sem repetir
+  function photos(w) {
+    var list = [];
+    [w.cover].concat(w.images || []).forEach(function (u) {
+      var s = safeSrc(u);
+      if (s && list.indexOf(s) < 0) list.push(s);
+    });
+    return list;
+  }
+  var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   function card(w) {
-    var a = el('a', 'wcard');
+    var box = el('div', 'wcard');
+    var a = el('a', 'wlink');
     a.href = '/portfolio/' + encodeURIComponent(w.slug);
+    var pics = photos(w);
     var img = document.createElement('img');
-    img.src = safeSrc(w.cover) || safeSrc((w.images || [])[0]);
+    img.src = pics[0] || '';
     img.alt = w.title + (w.client ? ' — ' + w.client : '');
     img.loading = 'lazy';
     img.decoding = 'async';
     a.appendChild(img);
     a.appendChild(el('div', 'n', w.client || w.title));
     a.appendChild(el('div', 'p', w.client ? w.title : (w.categoryLabel || CATS[w.category] || '')));
-    return a;
+    box.appendChild(a);
+    if (pics.length > 1) flip(box, img, pics);
+    return box;
+  }
+
+  // troca de fotos: passa o mouse (computador) ou usa as setinhas (celular)
+  function flip(box, img, pics) {
+    var i = 0, timer = null, loaded = false;
+    var nav = el('div', 'wnav');
+    var prev = el('button', 'wprev', '‹');
+    var next = el('button', 'wnext', '›');
+    prev.type = next.type = 'button';
+    prev.setAttribute('aria-label', 'Foto anterior');
+    next.setAttribute('aria-label', 'Próxima foto');
+    var dots = el('div', 'wdots');
+    pics.forEach(function () { dots.appendChild(el('span')); });
+    nav.appendChild(prev); nav.appendChild(dots); nav.appendChild(next);
+    box.appendChild(nav);
+
+    function preload() {
+      if (loaded) return;
+      loaded = true;
+      pics.forEach(function (u) { var p = new Image(); p.src = u; });
+    }
+    function show(n) {
+      i = (n + pics.length) % pics.length;
+      img.src = pics[i];
+      Array.prototype.forEach.call(dots.children, function (d, k) { d.className = k === i ? 'on' : ''; });
+    }
+    function stop() { clearInterval(timer); timer = null; }
+    show(0);
+
+    prev.addEventListener('click', function () { preload(); stop(); show(i - 1); });
+    next.addEventListener('click', function () { preload(); stop(); show(i + 1); });
+    box.addEventListener('pointerenter', function (e) {
+      if (e.pointerType !== 'mouse') return;
+      preload();
+      if (calm || timer) return;
+      timer = setInterval(function () { show(i + 1); }, 900);
+    });
+    box.addEventListener('pointerleave', function (e) {
+      if (e.pointerType !== 'mouse') return;
+      stop(); show(0);
+    });
   }
 
   function renderGrid(box, list, emptyMsg) {

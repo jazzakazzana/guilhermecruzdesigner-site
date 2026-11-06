@@ -28,7 +28,7 @@ As animações usam o atributo `data-reveal` nos elementos do HTML e respeitam "
 Os trabalhos do portfólio vêm do banco D1 (`/api/works`) e, se falhar, de `public/data/works.json`. O Gui cadastra novos trabalhos pelo `/admin/`, não pelo código.
 Identidade visual (fechada)
 Cores (paleta da designer, desde 18/10/2026): Deep Forest `#102716`, Swamp Green `#4A644D`, Orange `#DE6D20`, Black `#111111`, Dark Grey `#515151`, Smoke Grey `#E5E5E5`, White `#FFFFFF`. O `/admin/` ainda usa as cores antigas via `style.css`.
-Fontes: Plus Jakarta Sans (títulos, 700/800) e Inter (textos). Não adicionar outras. Títulos em minúsculas com inicial maiúscula (sem caixa alta).
+Fontes (desde 05/11/2026): Dela Gothic One (títulos, peso único) e DM Sans (textos, 400 a 700). Não adicionar outras. Títulos em minúsculas com inicial maiúscula (sem caixa alta).
 Estilo: limpo, bordas de 3px, sombras sólidas deslocadas, sem fundos decorativos (nada de quadrados de mangá), animação discreta. Botão principal laranja com texto branco. Mudanças de visual do site público vão em `public/css/site.css`.
 Nunca usar personagens, logos ou obras de terceiros (anime, jogos) nas peças visuais. Linguagem visual original.
 Ao terminar qualquer tarefa
