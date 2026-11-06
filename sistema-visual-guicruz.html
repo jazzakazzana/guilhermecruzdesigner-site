@@ -1,0 +1,215 @@
+<title>Sistema Visual Guicruz</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Dela+Gothic+One&display=swap">
+<style>
+/* Layout: band in brand green, then real post templates at true ratio, then the rules behind them. Single light look: smoke page so the dark posts stand out. */
+:root {
+  color-scheme: light;
+  --forest: #102716; --swamp: #4A644D; --orange: #DE6D20;
+  --black: #111111; --grey: #515151; --smoke: #E5E5E5; --white: #FFFFFF;
+  --display: "Dela Gothic One", "Arial Black", Impact, sans-serif;
+  --body: "DM Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+body { background: var(--smoke); color: var(--forest); font-family: var(--body); font-size: 16px; line-height: 1.55; }
+.in { max-width: 1180px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 44px; display: grid; gap: 28px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; line-height: 1.12; text-wrap: balance; }
+h1 { font-size: clamp(2rem, 6vw, 3.6rem); }
+h2 { font-size: clamp(1.4rem, 3.4vw, 2rem); }
+h3 { font-size: 1.05rem; }
+p { margin: 0; max-width: 65ch; }
+.band { background: var(--forest); color: var(--white); }
+.band em { color: var(--orange); font-style: normal; }
+.band .in { gap: 14px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 32px 20px; align-items: start; }
+figure { margin: 0; display: grid; gap: 10px; min-width: 0; }
+figcaption { display: grid; gap: 2px; font-size: .92rem; color: var(--grey); }
+figcaption b { color: var(--forest); }
+
+/* Post artboards: all sizes in cqw, so 1cqw = 10.8px of the real 1080px post */
+.art { container-type: inline-size; aspect-ratio: 3 / 4; position: relative; overflow: hidden; max-width: 100%; }
+.art.reels { aspect-ratio: 9 / 16; }
+.fill { position: absolute; inset: 0; padding: 7.4cqw; display: flex; flex-direction: column; gap: 3cqw; }
+.manga { background-color: var(--forest); color: var(--white); background-image: radial-gradient(circle, rgba(74,100,77,.5) 22%, transparent 23%), linear-gradient(112deg, transparent 58%, rgba(74,100,77,.75) 58% 58.5%, transparent 58.5%), linear-gradient(8deg, transparent 31%, rgba(74,100,77,.75) 31% 31.4%, transparent 31.4%); background-size: 2.4cqw 2.4cqw, 100% 100%, 100% 100%; }
+.claro { background: var(--smoke); color: var(--forest); }
+.virada { color: var(--forest); background: repeating-conic-gradient(from 0deg at 50% 46%, rgba(16,39,22,.15) 0 2.5deg, transparent 2.5deg 8deg), var(--orange); }
+.t { font-family: var(--display); line-height: 1.08; text-wrap: balance; }
+.t.g { font-size: 13.4cqw; }
+.t.m { font-size: 10cqw; }
+.t b { font-weight: 400; color: var(--orange); }
+.x { font-size: 3.7cqw; line-height: 1.35; font-weight: 500; }
+.x.big { font-size: 4.6cqw; }
+.mini { font-size: 3cqw; font-weight: 700; letter-spacing: .02em; }
+.foot { margin-top: auto; display: flex; justify-content: space-between; align-items: baseline; font-size: 2.6cqw; font-weight: 500; }
+.foto { position: absolute; right: -5cqw; bottom: -5cqw; width: 66cqw; height: 66cqw; border-radius: 48% 44% 0 0; background: var(--swamp); border: 1.7cqw solid var(--white); outline: 1.1cqw solid var(--orange); display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 3cqw; font-weight: 500; text-align: center; }
+.seta { position: absolute; width: 21cqw; left: 12cqw; bottom: 21cqw; color: var(--orange); }
+.seta path { fill: none; stroke: currentColor; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.tag { align-self: flex-start; background: var(--orange); color: var(--forest); padding: .5cqw 2cqw; font-size: 3cqw; font-weight: 700; }
+.quadro { flex: 1; min-height: 0; background: var(--smoke); color: var(--grey); border: 1.7cqw solid var(--white); display: flex; align-items: center; justify-content: center; font-size: 3cqw; font-weight: 500; }
+
+/* Colors */
+.bar { display: flex; height: 64px; overflow: hidden; }
+.bar span { display: flex; align-items: center; justify-content: center; font-size: .85rem; font-weight: 700; min-width: 0; }
+.cores { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
+.cor { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: center; }
+.cor i { width: 44px; height: 44px; display: block; border: 1px solid rgba(16,39,22,.2); }
+.cor div { display: grid; font-size: .92rem; line-height: 1.35; min-width: 0; }
+.cor code { font-family: var(--body); color: var(--grey); user-select: all; }
+
+/* Type and rules */
+.duas { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+.bloco { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.bloco .ex { font-family: var(--display); font-size: clamp(1.6rem, 3.6vw, 2.2rem); line-height: 1.12; }
+table { width: 100%; border-collapse: collapse; font-size: .95rem; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 7px 10px 7px 0; border-bottom: 1px solid rgba(16,39,22,.2); vertical-align: top; }
+th { font-weight: 700; }
+ul { margin: 0; padding-left: 1.1em; display: grid; gap: 7px; }
+.tabela { overflow-x: auto; }
+</style>
+
+<header class="band">
+  <div class="in">
+    <h1>Sistema visual do <em>@guicruzdesign</em></h1>
+    <p>Modelos e regras pra montar teus posts sem decidir tudo do zero. Verde, laranja e mangá, com a Dela Gothic One nos títulos e a DM Sans nos textos.</p>
+  </div>
+</header>
+
+<main>
+  <section class="in">
+    <div class="bloco">
+      <h2>Modelos</h2>
+      <p>Todos usam textos da tua semana 1. Eles foram feitos em 1080 × 1440 (3:4), e o Reels em 1080 × 1920. A textura aqui é só uma simulação: no arquivo final, usa as tuas páginas de mangá.</p>
+    </div>
+    <div class="grid">
+      <figure>
+        <div class="art"><div class="fill manga">
+          <p class="mini">Carrossel · Processo</p>
+          <div class="t g">Eu não começo pelo <b>desenho.</b></div>
+          <svg class="seta" viewBox="0 0 120 90" aria-hidden="true"><path d="M8 18c30-14 72-6 94 38"/><path d="M76 50l27 10 3-29"/></svg>
+          <div class="foot"><span>@guicruzdesign</span></div>
+        </div><div class="foto">tua foto<br>recortada</div></div>
+        <figcaption><b>Capa de carrossel</b>Título gigante, foto com contorno e seta. Só uma palavra em laranja.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="art"><div class="fill claro">
+          <div class="t m">Um logo pra festa de 15 anos não é a marca de um mercado.</div>
+          <p class="x big">Os dois são design. Mas o trabalho é totalmente diferente.</p>
+          <div class="foot"><span>@guicruzdesign</span><span>3/7</span></div>
+        </div></div>
+        <figcaption><b>Slide de conteúdo</b>Fundo claro pra dar respiro nos slides com mais texto.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="art"><div class="fill virada">
+          <div class="t g" style="margin-block:auto">Bonito é o mínimo. Coerente é o trabalho.</div>
+          <div class="foot"><span>@guicruzdesign</span><span>7/7</span></div>
+        </div></div>
+        <figcaption><b>Slide de virada</b>O único fundo laranja do carrossel. Marca a frase mais forte.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="art"><div class="fill manga">
+          <div class="t m" style="margin-top:auto">Design parece simples.</div>
+          <p class="x big">É por isso que tanta gente acha que é <b style="color:var(--orange)">barato.</b></p>
+          <div class="foot"><span>@guicruzdesign</span></div>
+        </div></div>
+        <figcaption><b>Card de opinião</b>Frase curta, sem foto. Pronto pra alguém compartilhar nos stories.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="art"><div class="fill manga">
+          <span class="tag">Projeto fictício</span>
+          <div class="quadro">arte do projeto</div>
+          <div class="t" style="font-size:7.4cqw">Livraria Descubra</div>
+          <div class="foot"><span>Identidade e carrossel</span><span>@guicruzdesign</span></div>
+        </div></div>
+        <figcaption><b>Capa de projeto</b>O trabalho entra na tua moldura, pra capa não destoar do feed.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="art reels"><div class="fill manga" style="padding-block:24cqw">
+          <p class="mini">Reels</p>
+          <div class="t g">Logo <b>rapidinho?</b></div>
+          <p class="x">O que eu pergunto primeiro.</p>
+        </div></div>
+        <figcaption><b>Capa de Reels</b>Título no centro: o grid corta as pontas do vídeo.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="in">
+    <div class="bloco">
+      <h2>Cores</h2>
+      <p>Esta é a proporção dentro de um carrossel inteiro, não em cada slide.</p>
+    </div>
+    <div class="bar" role="img" aria-label="Proporção: Deep Forest 60 por cento, Smoke Grey e White 20, Orange 15, Swamp Green 5">
+      <span style="flex:60;background:var(--forest);color:var(--white)">60%</span>
+      <span style="flex:20;background:var(--white);color:var(--forest)">20%</span>
+      <span style="flex:15;background:var(--orange);color:var(--forest)">15%</span>
+      <span style="flex:5;background:var(--swamp);color:var(--white)">5%</span>
+    </div>
+    <div class="cores">
+      <div class="cor"><i style="background:var(--forest)"></i><div><b>Deep Forest</b><code>#102716</code>Fundo principal</div></div>
+      <div class="cor"><i style="background:var(--orange)"></i><div><b>Orange</b><code>#DE6D20</code>Destaque e virada</div></div>
+      <div class="cor"><i style="background:var(--swamp)"></i><div><b>Swamp Green</b><code>#4A644D</code>Textura e detalhes</div></div>
+      <div class="cor"><i style="background:var(--smoke)"></i><div><b>Smoke Grey</b><code>#E5E5E5</code>Fundo claro</div></div>
+      <div class="cor"><i style="background:var(--white)"></i><div><b>White</b><code>#FFFFFF</code>Texto e contorno</div></div>
+      <div class="cor"><i style="background:var(--grey)"></i><div><b>Dark Grey</b><code>#515151</code>Texto sobre claro</div></div>
+      <div class="cor"><i style="background:var(--black)"></i><div><b>Black</b><code>#111111</code>Texto sobre claro</div></div>
+    </div>
+  </section>
+
+  <section class="in">
+    <h2>Fontes</h2>
+    <div class="duas">
+      <div class="bloco">
+        <h3>Títulos: Dela Gothic One</h3>
+        <p class="ex">Marca sem padrão não é lembrada.</p>
+      </div>
+      <div class="bloco">
+        <h3>Textos: DM Sans</h3>
+        <p>Primeiro eu preciso entender o que tu precisa. Depois eu estudo o teu mercado. Só aí eu desenho.</p>
+      </div>
+    </div>
+    <div class="tabela">
+      <table>
+        <thead><tr><th>Uso</th><th>Fonte</th><th>Tamanho em 1080 px</th></tr></thead>
+        <tbody>
+          <tr><td>Título de capa</td><td>Dela Gothic One</td><td>130 a 150 px</td></tr>
+          <tr><td>Título de slide</td><td>Dela Gothic One</td><td>90 a 110 px</td></tr>
+          <tr><td>Texto de apoio</td><td>DM Sans Medium</td><td>40 a 50 px</td></tr>
+          <tr><td>Rótulo</td><td>DM Sans Bold</td><td>32 px</td></tr>
+          <tr><td>@ e numeração</td><td>DM Sans Medium</td><td>28 px, nunca menos</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="in">
+    <h2>Regras</h2>
+    <div class="duas">
+      <div class="bloco">
+        <h3>Sempre</h3>
+        <ul>
+          <li>Margem de 80 px em todos os lados.</li>
+          <li>Foto recortada com contorno branco e laranja.</li>
+          <li>Uma palavra em laranja por título, no máximo.</li>
+          <li>Um slide de virada laranja por carrossel.</li>
+          <li>O @ sempre no mesmo canto.</li>
+        </ul>
+      </div>
+      <div class="bloco">
+        <h3>Nunca</h3>
+        <ul>
+          <li>Laranja sobre Swamp Green.</li>
+          <li>Texto branco pequeno sobre laranja.</li>
+          <li>Black colado no Deep Forest.</li>
+          <li>Textura forte atrás de texto pequeno.</li>
+          <li>Mais de 30 palavras no mesmo slide.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
