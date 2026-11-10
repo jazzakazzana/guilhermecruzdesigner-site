@@ -36,4 +36,10 @@ O painel `/admin/` usa o CSS base e mantém as fontes e cores antigas. Não este
 
 `public/css/anim.css` e `public/js/anim.js` controlam as animações com `data-reveal`. Preservar o respeito à preferência de movimento reduzido e a alternativa que mantém o conteúdo visível quando a animação falha.
 
-O arquivo `sistema-visual-guicruz.html`, na raiz, serve como referência visual e fica fora da pasta publicada. Sua existência não autoriza aplicar diferenças ao site.
+## Guia visual do @guicruzdesign
+
+O Gui confirmou o sistema visual do @guicruzdesign como referência permanente da marca. Consulte [o guia visual na raiz do projeto](../sistema-visual-guicruz.html) antes de propor ou executar mudanças visuais no site.
+
+Use Deep Forest como base escura, Smoke Grey e White para dar respiro e Orange para destaques pontuais. Swamp Green serve para detalhes. Preserve Dela Gothic One nos títulos e DM Sans nos textos. Evite laranja sobre Swamp Green, texto branco pequeno sobre laranja, preto junto de Deep Forest e textura forte atrás de texto pequeno.
+
+As proporções de cores, margens, tamanhos de texto, limites de palavras e posição do @ do guia foram definidos para posts, carrosséis e capas de Reels. Para o site, use os princípios de hierarquia, respiro e legibilidade nas larguras de tela em que a página funciona. Preserve as regras do site para fundos e peças visuais. Qualquer mudança em componentes existentes continua dependendo de um pedido do Gui.

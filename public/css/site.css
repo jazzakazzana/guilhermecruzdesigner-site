@@ -65,6 +65,10 @@ h2{font-size:clamp(1.8rem,4vw,2.8rem);}
 /* serviços */
 .sgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
 .sgrid .panel{padding:26px; border:3px solid var(--tinta); box-shadow:6px 6px 0 var(--brasa); background:var(--papel); color:var(--tinta);}
+.sgrid .panel-featured{border-top:8px solid var(--brasa);}
+@media (min-width:1050px){
+  #servicos .sgrid{grid-template-columns:1.2fr 1fr 1fr;}
+}
 .sgrid .panel.big{grid-row:auto; background:var(--papel);}
 .sgrid .panel h3{font-size:1.3rem; margin-bottom:10px;}
 .sgrid .panel p{font-weight:400; color:var(--taupe);}
@@ -178,5 +182,6 @@ html .bf-fs > legend,html .c-title,html .bf-block > h3{text-transform:none;}
 .wa-float .wa-icon{width:28px; height:28px;}
 
 @media (max-width:480px){
+  .home .top .btn.wa-contact,
   .home .wa-float{display:none;}
 }
