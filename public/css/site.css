@@ -176,3 +176,7 @@ html .bf-fs > legend,html .c-title,html .bf-block > h3{text-transform:none;}
 .top .btn.wa-contact{display:inline-flex; align-items:center; justify-content:center; gap:8px;}
 .wa-float{width:56px; height:56px; padding:0; justify-content:center;}
 .wa-float .wa-icon{width:28px; height:28px;}
+
+@media (max-width:480px){
+  .home .wa-float{display:none;}
+}
