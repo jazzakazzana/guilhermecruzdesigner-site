@@ -170,3 +170,9 @@ html .bf-fs > legend,html .c-title,html .bf-block > h3{text-transform:none;}
 .wdots span{width:8px; height:8px; background:var(--papel); border:1px solid var(--tinta);}
 .wdots span.on{background:var(--brasa);}
 @media (hover:none){.wnav button{opacity:1;}}
+
+/* Símbolo do WhatsApp nos contatos do cabeçalho e no botão flutuante. */
+.wa-icon{display:block; width:24px; height:24px; flex-shrink:0; fill:currentColor;}
+.top .btn.wa-contact{display:inline-flex; align-items:center; justify-content:center; gap:8px;}
+.wa-float{width:56px; height:56px; padding:0; justify-content:center;}
+.wa-float .wa-icon{width:28px; height:28px;}
